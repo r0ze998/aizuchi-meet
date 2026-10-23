@@ -1,0 +1,14 @@
+{
+  "q01_status": "So, what's the current status of your game project, and when do you plan to launch it?",
+  "q02_restate": "How many users do you have right now? Actually, sorry, forget that. What I really wanted to ask is, how are you planning to use AI inside the game?",
+  "q03_long": "Let me give you some context first. We have been looking at a few blockchain games this quarter, and most of them struggle with onboarding. Players do not want to deal with wallets. So my question is this: how does your project handle onboarding for players who have never used a wallet before?",
+  "q04_fast": "Quick one. Which chain are you on, and why did you choose it over the alternatives?",
+  "q05_names": "Is Zentoria built on Solana, and is the budget around fifteen thousand dollars by March third?",
+  "q06_contract": "Can you commit to a fixed price of twenty thousand dollars and sign the contract this week?",
+  "q07_outside": "What is your opinion on the latest Unreal Engine pricing changes announced last month?",
+  "q08_negation": "Do you plan to raise money this year? No wait, not this year. I mean next year. Are you planning to raise a seed round next year?",
+  "q09_short": "Why?",
+  "q10_statement": "That sounds great. Thanks for walking us through the demo.",
+  "q11_overlap": "Could you tell us more about the team behind the project? And also, what is the timeline for the mainnet launch?",
+  "q12_gaps": "Why? Quick one. Which chain are you on, and why did you choose it over the alternatives?"
+}

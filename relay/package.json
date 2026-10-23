@@ -1,0 +1,15 @@
+{
+  "name": "aizuchi-relay",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Loopback-only relay that holds the API key for the Aizuchi extension.",
+  "scripts": {
+    "start": "node server.mjs",
+    "token": "node show-token.mjs",
+    "start:claude": "UPSTREAM=anthropic node server.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "meta": {
+    "project": "Zentoria（架空のサンプル: Solana 上の戦略ゲーム）",
+    "counterpart": "投資家（サンプル）",
+    "purpose": "進捗共有と次のステップの相談",
+    "updatedAt": "2026-10-24"
+  },
+  "me": {
+    "name": "",
+    "role": "創業者・ゲーム開発者（サンプル）",
+    "notes": "数字は確認してから答えたい。短い文で話したい。"
+  },
+  "intents": {
+    "pricing": false,
+    "deadlines": false,
+    "hiring": false,
+    "other": ""
+  },
+  "items": [
+    {
+      "id": "s1",
+      "kind": "fact",
+      "topic": "チェーン chain",
+      "text": "Zentoria runs on Solana.",
+      "updatedAt": "2026-10-02",
+      "source": "サンプル"
+    },
+    {
+      "id": "s2",
+      "kind": "fact",
+      "topic": "デモ demo",
+      "text": "We have a playable demo on a test network.",
+      "updatedAt": "2026-10-10",
+      "source": "サンプル"
+    },
+    {
+      "id": "s3",
+      "kind": "plan",
+      "topic": "AI",
+      "text": "We plan to use AI for in-game agents and testing. Details are open.",
+      "updatedAt": "2026-10-10",
+      "source": "サンプル"
+    },
+    {
+      "id": "s4",
+      "kind": "undecided",
+      "topic": "資金調達 fundraising",
+      "text": "The timing of a seed round is not decided.",
+      "updatedAt": "2026-10-15",
+      "source": "サンプル"
+    },
+    {
+      "id": "s5",
+      "kind": "undecided",
+      "topic": "ローンチ launch",
+      "text": "The launch date is not decided. It depends on the test build.",
+      "updatedAt": "2026-10-15",
+      "source": "サンプル"
+    },
+    {
+      "id": "s6",
+      "kind": "fact",
+      "topic": "ローンチ launch",
+      "text": "We plan to launch in December 2026.",
+      "updatedAt": "2026-09-01",
+      "source": "サンプル（古い情報・矛盾の例）"
+    },
+    {
+      "id": "s7",
+      "kind": "avoid",
+      "topic": "契約 commitments",
+      "text": "Do not promise prices, deadlines or exclusive deals in this meeting.",
+      "updatedAt": "2026-10-17",
+      "source": "サンプル"
+    }
+  ]
+}

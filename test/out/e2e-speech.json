@@ -1,0 +1,3336 @@
+{
+  "startedAt": "2026-10-23T17:04:10.109Z",
+  "extensionId": "hkdniejckkeajnajkpdhgamjolbbcpch",
+  "providers": {
+    "stt": {
+      "name": "webspeech",
+      "label": "Chrome 音声認識 (Google サーバー)",
+      "external": true,
+      "supported": true,
+      "state": "listening"
+    },
+    "translate": {
+      "name": "mock",
+      "label": "翻訳: モック (送信なし)",
+      "external": false,
+      "supported": true,
+      "state": "ready"
+    },
+    "reply": {
+      "name": "relay",
+      "label": "候補: ローカル中継 → Anthropic",
+      "external": true,
+      "supported": true,
+      "state": "idle"
+    },
+    "states": {
+      "webspeech": {
+        "provider": "webspeech",
+        "label": "peer",
+        "state": "listening"
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "id": "q01_status",
+      "truth": "So, what's the current status of your game project, and when do you plan to launch it?",
+      "recognized": "so what's the current status of your game project and when do you plan to launch it",
+      "wer": 0,
+      "audioMs": 5179,
+      "latency": {
+        "playStart_to_firstInterim": 940,
+        "playEnd_to_lastFinal": 623,
+        "questionFinal_to_firstCandidate": 353,
+        "questionProvisional_to_firstCandidate": 364,
+        "provisionalBeforeEnd": 2687
+      },
+      "translations": [
+        {
+          "en": "so what's the current status of your game project and when do you plan to launch it",
+          "ja": "〔モック訳〕so what's the current status of your game project and when do you plan to launch it",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "進捗・現状を聞かれています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "確認する",
+          "en": "Let me check the latest status of launch and get back to you.",
+          "ja": "（登録情報に矛盾あり: ローンチ launch。断定せず、確認して折り返す）",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "Do you mean the current version or the next one?",
+          "ja": "今のバージョンのことですか、次のことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": -1210,
+          "ev": "start"
+        },
+        {
+          "t": 940,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 2
+        },
+        {
+          "t": 1255,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 9
+        },
+        {
+          "t": 1421,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 1526,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 1702,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1832,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 2030,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 2068,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 2307,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 31
+        },
+        {
+          "t": 2492,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 36
+        },
+        {
+          "t": 2672,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 36
+        },
+        {
+          "t": 2803,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 2896,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 2981,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3091,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3391,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3578,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3641,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 53
+        },
+        {
+          "t": 3928,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 58
+        },
+        {
+          "t": 4060,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 61
+        },
+        {
+          "t": 4178,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4234,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4475,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4526,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4656,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 4764,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 5023,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 5070,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 5129,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 83
+        },
+        {
+          "t": 5255,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 83
+        },
+        {
+          "t": 5613,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 83
+        },
+        {
+          "t": 5802,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q02_restate",
+      "truth": "How many users do you have right now? Actually, sorry, forget that. What I really wanted to ask is, how are you planning to use AI inside the game?",
+      "recognized": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game",
+      "wer": 0,
+      "audioMs": 9521,
+      "latency": {
+        "playStart_to_firstInterim": 554,
+        "playEnd_to_lastFinal": 576,
+        "questionFinal_to_firstCandidate": 352,
+        "questionProvisional_to_firstCandidate": 354,
+        "provisionalBeforeEnd": 7480
+      },
+      "translations": [
+        {
+          "en": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game",
+          "ja": "〔モック訳〕how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "やり方・方針を聞かれています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "知っている範囲で話す",
+          "en": "We are planning this, but it is not final. We plan to use AI for in-game agents and testing. Details are open.",
+          "ja": "（登録情報: AI）",
+          "confirm": false,
+          "basis": "profile"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "Do you mean the current version or the next one?",
+          "ja": "今のバージョンのことですか、次のことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": true,
+      "issues": [
+        "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+      ],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 554,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 656,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 9
+        },
+        {
+          "t": 1021,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1149,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1259,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1315,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1435,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 22
+        },
+        {
+          "t": 1616,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1742,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1909,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 2041,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 2089,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2210,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2642,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2688,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2928,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 46
+        },
+        {
+          "t": 3531,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 46
+        },
+        {
+          "t": 3660,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 4260,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 4444,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 59
+        },
+        {
+          "t": 4631,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 5031,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 5226,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 5527,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 69
+        },
+        {
+          "t": 5653,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 5708,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 78
+        },
+        {
+          "t": 6128,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 85
+        },
+        {
+          "t": 6250,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 88
+        },
+        {
+          "t": 6308,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 88
+        },
+        {
+          "t": 6433,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 92
+        },
+        {
+          "t": 6736,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 6864,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 7044,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 7289,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 99
+        },
+        {
+          "t": 7343,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 103
+        },
+        {
+          "t": 7413,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 107
+        },
+        {
+          "t": 7822,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 116
+        },
+        {
+          "t": 7888,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 116
+        },
+        {
+          "t": 7916,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 116
+        },
+        {
+          "t": 7973,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 119
+        },
+        {
+          "t": 8342,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 123
+        },
+        {
+          "t": 8392,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 123
+        },
+        {
+          "t": 8585,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 123
+        },
+        {
+          "t": 8654,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 125
+        },
+        {
+          "t": 8843,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 126
+        },
+        {
+          "t": 8958,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 126
+        },
+        {
+          "t": 8995,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 133
+        },
+        {
+          "t": 9265,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 9441,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 9584,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 9844,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 10097,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q03_long",
+      "truth": "Let me give you some context first. We have been looking at a few blockchain games this quarter, and most of them struggle with onboarding. Players do not want to deal with wallets. So my question is this: how does your project handle onboarding for players who have never used a wallet before?",
+      "recognized": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project",
+      "wer": 0.208,
+      "audioMs": 16789,
+      "latency": {
+        "playStart_to_firstInterim": 644,
+        "playEnd_to_lastFinal": 682,
+        "questionFinal_to_firstCandidate": 353,
+        "questionProvisional_to_firstCandidate": 353,
+        "provisionalBeforeEnd": 4044
+      },
+      "translations": [
+        {
+          "en": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project",
+          "ja": "〔モック訳〕let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "やり方・方針を聞かれています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "Could you share the details in writing first?",
+          "ja": "まず詳細を書面でいただけますか？",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "確認する",
+          "en": "Just to confirm, what exactly are you asking me to agree to?",
+          "ja": "確認ですが、具体的に何への合意を求めていますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 644,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 725,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 7
+        },
+        {
+          "t": 824,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1002,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 16
+        },
+        {
+          "t": 1236,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1317,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1420,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1623,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1695,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 1758,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1851,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 2269,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2353,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2698,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2870,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2955,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 43
+        },
+        {
+          "t": 3320,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 48
+        },
+        {
+          "t": 3475,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 3561,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 3774,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 59
+        },
+        {
+          "t": 3906,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 59
+        },
+        {
+          "t": 3968,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4066,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4320,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 4376,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 4567,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 76
+        },
+        {
+          "t": 4851,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 82
+        },
+        {
+          "t": 5083,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 87
+        },
+        {
+          "t": 5181,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 82
+        },
+        {
+          "t": 5222,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 87
+        },
+        {
+          "t": 5473,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 93
+        },
+        {
+          "t": 5598,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 5806,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 5941,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 99
+        },
+        {
+          "t": 6182,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 99
+        },
+        {
+          "t": 6287,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 104
+        },
+        {
+          "t": 6423,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 107
+        },
+        {
+          "t": 6550,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 107
+        },
+        {
+          "t": 6611,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 112
+        },
+        {
+          "t": 6877,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 112
+        },
+        {
+          "t": 7018,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 118
+        },
+        {
+          "t": 7090,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 121
+        },
+        {
+          "t": 7198,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 126
+        },
+        {
+          "t": 7485,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 129
+        },
+        {
+          "t": 7621,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 134
+        },
+        {
+          "t": 7679,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 134
+        },
+        {
+          "t": 7741,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 7803,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 8358,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 8474,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 8669,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 145
+        },
+        {
+          "t": 8791,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 148
+        },
+        {
+          "t": 8887,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 152
+        },
+        {
+          "t": 9112,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 157
+        },
+        {
+          "t": 9234,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 157
+        },
+        {
+          "t": 9369,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 157
+        },
+        {
+          "t": 9470,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 160
+        },
+        {
+          "t": 9533,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 165
+        },
+        {
+          "t": 9651,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 170
+        },
+        {
+          "t": 9701,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 170
+        },
+        {
+          "t": 10083,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 175
+        },
+        {
+          "t": 10134,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 175
+        },
+        {
+          "t": 10212,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 178
+        },
+        {
+          "t": 10251,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 178
+        },
+        {
+          "t": 10801,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 178
+        },
+        {
+          "t": 11040,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 181
+        },
+        {
+          "t": 11222,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 184
+        },
+        {
+          "t": 11515,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 193
+        },
+        {
+          "t": 11641,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 196
+        },
+        {
+          "t": 11825,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 196
+        },
+        {
+          "t": 11920,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 201
+        },
+        {
+          "t": 12120,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 201
+        },
+        {
+          "t": 12251,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 201
+        },
+        {
+          "t": 12479,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 205
+        },
+        {
+          "t": 12573,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 205
+        },
+        {
+          "t": 12745,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 210
+        },
+        {
+          "t": 13074,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 215
+        },
+        {
+          "t": 13265,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 223
+        },
+        {
+          "t": 13315,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 223
+        },
+        {
+          "t": 13674,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 228
+        },
+        {
+          "t": 13866,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 230
+        },
+        {
+          "t": 14097,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 233
+        },
+        {
+          "t": 14226,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 239
+        },
+        {
+          "t": 14394,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 241
+        },
+        {
+          "t": 14473,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 241
+        },
+        {
+          "t": 14650,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 245
+        },
+        {
+          "t": 14827,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 250
+        },
+        {
+          "t": 14939,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 253
+        },
+        {
+          "t": 14987,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 253
+        },
+        {
+          "t": 15143,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 257
+        },
+        {
+          "t": 15181,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 262
+        },
+        {
+          "t": 15243,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 262
+        },
+        {
+          "t": 15430,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15534,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15718,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15779,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 273
+        },
+        {
+          "t": 16009,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 273
+        },
+        {
+          "t": 16137,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 275
+        },
+        {
+          "t": 16322,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 280
+        },
+        {
+          "t": 16370,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 282
+        },
+        {
+          "t": 16515,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 16747,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 16987,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 17119,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 17471,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q04_fast",
+      "truth": "Quick one. Which chain are you on, and why did you choose it over the alternatives?",
+      "recognized": "",
+      "wer": 1,
+      "audioMs": 3763,
+      "latency": {
+        "playStart_to_firstInterim": null,
+        "playEnd_to_lastFinal": null,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [],
+      "summaryJa": "やり方・方針を聞かれています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "Could you share the details in writing first?",
+          "ja": "まず詳細を書面でいただけますか？",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "確認する",
+          "en": "Just to confirm, what exactly are you asking me to agree to?",
+          "ja": "確認ですが、具体的に何への合意を求めていますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": []
+    },
+    {
+      "id": "q05_names",
+      "truth": "Is Zentoria built on Solana, and is the budget around fifteen thousand dollars by March third?",
+      "recognized": "and is the budget around 15,000 by March 3rd",
+      "wer": 0.563,
+      "audioMs": 5667,
+      "latency": {
+        "playStart_to_firstInterim": 798,
+        "playEnd_to_lastFinal": 571,
+        "questionFinal_to_firstCandidate": 354,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "and is the budget around 15,000 by March 3rd",
+          "ja": "〔モック訳〕and is the budget around 15,000 by March 3rd",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "質問ではなく説明",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "相づち・感謝",
+          "en": "Thank you. That's helpful to know.",
+          "ja": "ありがとうございます。参考になります。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "Could you tell me a bit more about that?",
+          "ja": "その点をもう少し教えてもらえますか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 798,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 3
+        },
+        {
+          "t": 990,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 1046,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 2464,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 3142,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 3305,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 25
+        },
+        {
+          "t": 3918,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 25
+        },
+        {
+          "t": 4341,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 4417,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 4515,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 4925,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 5054,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 5118,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 5192,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 5665,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 43
+        },
+        {
+          "t": 5722,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 5794,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 6238,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q06_contract",
+      "truth": "Can you commit to a fixed price of twenty thousand dollars and sign the contract this week?",
+      "recognized": "can you commit to a fixed price of $20,000 and sign the contract this week",
+      "wer": 0.176,
+      "audioMs": 4854,
+      "latency": {
+        "playStart_to_firstInterim": 635,
+        "playEnd_to_lastFinal": 592,
+        "questionFinal_to_firstCandidate": 353,
+        "questionProvisional_to_firstCandidate": 354,
+        "provisionalBeforeEnd": 3093
+      },
+      "translations": [
+        {
+          "en": "can you commit to a fixed price of $20,000 and sign the contract this week",
+          "ja": "〔モック訳〕can you commit to a fixed price of $20,000 and sign the contract this week",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "費用・契約に関する確認です",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "Could you share the details in writing first?",
+          "ja": "まず詳細を書面でいただけますか？",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "確認する",
+          "en": "Just to confirm, what exactly are you asking me to agree to?",
+          "ja": "確認ですが、具体的に何への合意を求めていますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 635,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 692,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 8
+        },
+        {
+          "t": 867,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 929,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1051,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1240,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1284,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 20
+        },
+        {
+          "t": 1428,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 24
+        },
+        {
+          "t": 1525,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 1664,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 1761,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 1892,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2121,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2367,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2499,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2626,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 39
+        },
+        {
+          "t": 2741,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 3111,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 43
+        },
+        {
+          "t": 3475,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 47
+        },
+        {
+          "t": 3634,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 3700,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 3881,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 4053,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 61
+        },
+        {
+          "t": 4153,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4237,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4345,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4471,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4701,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 4755,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 4931,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 5433,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 5446,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q07_outside",
+      "truth": "What is your opinion on the latest Unreal Engine pricing changes announced last month?",
+      "recognized": "what is your opinion on the latest Unreal Engine",
+      "wer": 0.357,
+      "audioMs": 5086,
+      "latency": {
+        "playStart_to_firstInterim": 647,
+        "playEnd_to_lastFinal": 451,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": 3243
+      },
+      "translations": [
+        {
+          "en": "what is your opinion on the latest Unreal Engine",
+          "ja": "〔モック訳〕what is your opinion on the latest Unreal Engine",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "",
+      "questionState": "final",
+      "candidates": [],
+      "setStatus": "error",
+      "setError": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。",
+      "corrected": false,
+      "issues": [
+        "reply-unreachable: ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。",
+        "reply-unreachable: ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。",
+        "reply-unreachable: ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+      ],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 647,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 5
+        },
+        {
+          "t": 772,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 8
+        },
+        {
+          "t": 945,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 1135,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1180,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1252,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1362,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1413,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 24
+        },
+        {
+          "t": 1551,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 1763,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 1843,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2008,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2140,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2264,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2387,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2451,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2507,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 42
+        },
+        {
+          "t": 2696,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3118,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 3216,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3288,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3635,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 63
+        },
+        {
+          "t": 3713,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 3805,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4127,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 69
+        },
+        {
+          "t": 4236,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 4316,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 4364,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 4599,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 4780,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 4958,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 5189,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 5529,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 5537,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q08_negation",
+      "truth": "Do you plan to raise money this year? No wait, not this year. I mean next year. Are you planning to raise a seed round next year?",
+      "recognized": "do you plan to raise money",
+      "wer": 0.778,
+      "audioMs": 8035,
+      "latency": {
+        "playStart_to_firstInterim": 612,
+        "playEnd_to_lastFinal": 670,
+        "questionFinal_to_firstCandidate": 355,
+        "questionProvisional_to_firstCandidate": 363,
+        "provisionalBeforeEnd": 6218
+      },
+      "translations": [
+        {
+          "en": "do you plan to raise money",
+          "ja": "〔モック訳〕do you plan to raise money",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "質問の内容を確認してください",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "知っている範囲で話す",
+          "en": "We are planning this, but it is not final. We plan to use AI for in-game agents and testing. Details are open.",
+          "ja": "（登録情報: AI）",
+          "confirm": false,
+          "basis": "profile"
+        },
+        {
+          "strategy": "補足する",
+          "en": "We plan to launch in December 2026.",
+          "ja": "（登録情報: ローンチ launch）",
+          "confirm": false,
+          "basis": "profile"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "Do you mean the current version or the next one?",
+          "ja": "今のバージョンのことですか、次のことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": true,
+      "issues": [
+        "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+      ],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 612,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 3
+        },
+        {
+          "t": 789,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 7
+        },
+        {
+          "t": 938,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1031,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1213,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1342,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1391,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1531,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1626,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1817,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 1943,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 2002,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2127,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2413,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2600,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2734,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2912,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 3331,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 3525,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3700,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 3754,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 3803,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 4534,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 39
+        },
+        {
+          "t": 4640,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 4710,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 44
+        },
+        {
+          "t": 4878,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 5052,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 5304,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 5464,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 5661,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 5735,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 6088,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 62
+        },
+        {
+          "t": 6163,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 6335,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 74
+        },
+        {
+          "t": 6626,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 20
+        },
+        {
+          "t": 6981,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 7050,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 7589,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 8705,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q09_short",
+      "truth": "Why?",
+      "recognized": "why",
+      "wer": 0,
+      "audioMs": 697,
+      "latency": {
+        "playStart_to_firstInterim": 897,
+        "playEnd_to_lastFinal": 708,
+        "questionFinal_to_firstCandidate": 355,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "why",
+          "ja": "〔モック訳〕why",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "理由を聞かれています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "聞き返す",
+          "en": "Sorry, could you say that again more slowly?",
+          "ja": "すみません、もう一度ゆっくり言ってもらえますか？",
+          "confirm": false,
+          "basis": "none"
+        },
+        {
+          "strategy": "保留する",
+          "en": "I don't have that information right now. I will check and follow up.",
+          "ja": "今は情報がありません。確認して追って連絡します。",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 897,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 1405,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q10_statement",
+      "truth": "That sounds great. Thanks for walking us through the demo.",
+      "recognized": "that sounds great thanks for walking us through the demo",
+      "wer": 0,
+      "audioMs": 3228,
+      "latency": {
+        "playStart_to_firstInterim": 684,
+        "playEnd_to_lastFinal": 561,
+        "questionFinal_to_firstCandidate": 353,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "that sounds great thanks for walking us through the demo",
+          "ja": "〔モック訳〕that sounds great thanks for walking us through the demo",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "質問ではなく説明",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "相づち・感謝",
+          "en": "Thank you. That's helpful to know.",
+          "ja": "ありがとうございます。参考になります。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "Could you tell me a bit more about that?",
+          "ja": "その点をもう少し教えてもらえますか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 684,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 5
+        },
+        {
+          "t": 797,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 978,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1279,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1392,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1576,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1757,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 25
+        },
+        {
+          "t": 1936,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 2230,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2353,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2486,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2545,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2653,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 48
+        },
+        {
+          "t": 2777,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 2829,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 3092,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 3196,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3251,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3368,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3789,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q11_overlap",
+      "truth": "Could you tell us more about the team behind the project? And also, what is the timeline for the mainnet launch?",
+      "recognized": "could you tell us more about the team behind the project",
+      "wer": 0.476,
+      "audioMs": 4739,
+      "latency": {
+        "playStart_to_firstInterim": 399,
+        "playEnd_to_lastFinal": 576,
+        "questionFinal_to_firstCandidate": 355,
+        "questionProvisional_to_firstCandidate": 353,
+        "provisionalBeforeEnd": 3058
+      },
+      "translations": [
+        {
+          "en": "could you tell us more about the team behind the project",
+          "ja": "〔モック訳〕could you tell us more about the team behind the project",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "チーム・担当を聞かれています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "聞き返す",
+          "en": "Sorry, could you say that again more slowly?",
+          "ja": "すみません、もう一度ゆっくり言ってもらえますか？",
+          "confirm": false,
+          "basis": "none"
+        },
+        {
+          "strategy": "保留する",
+          "en": "I don't have that information right now. I will check and follow up.",
+          "ja": "今は情報がありません。確認して追って連絡します。",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 399,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 485,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 10
+        },
+        {
+          "t": 640,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 948,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 999,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1070,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1190,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 1244,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 1315,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1551,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1681,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 1790,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 1920,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 1972,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2165,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 2233,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 2276,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 2442,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 2572,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 2751,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 2815,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3036,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3360,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 5315,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q12_gaps",
+      "truth": "Why? Quick one. Which chain are you on, and why did you choose it over the alternatives?",
+      "recognized": "why did you choose",
+      "wer": 0.765,
+      "audioMs": 12423,
+      "latency": {
+        "playStart_to_firstInterim": 4742,
+        "playEnd_to_lastFinal": 630,
+        "questionFinal_to_firstCandidate": 353,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "why",
+          "ja": "〔モック訳〕why",
+          "state": "final"
+        },
+        {
+          "en": "did you choose",
+          "ja": "〔モック訳〕did you choose",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "質問の内容を確認してください",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "聞き返す",
+          "en": "Sorry, could you say that again more slowly?",
+          "ja": "すみません、もう一度ゆっくり言ってもらえますか？",
+          "confirm": false,
+          "basis": "none"
+        },
+        {
+          "strategy": "保留する",
+          "en": "I don't have that information right now. I will check and follow up.",
+          "ja": "今は情報がありません。確認して追って連絡します。",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 4742,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 5398,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        },
+        {
+          "t": 9230,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 9406,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 10
+        },
+        {
+          "t": 9824,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 16
+        },
+        {
+          "t": 10015,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 16
+        },
+        {
+          "t": 11159,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 11226,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 8
+        },
+        {
+          "t": 11416,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 11573,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 11689,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 11737,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 11836,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 11897,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 12049,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 12101,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 34
+        },
+        {
+          "t": 12186,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 34
+        },
+        {
+          "t": 12286,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 34
+        },
+        {
+          "t": 12423,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 12467,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 13053,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "q01_status/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "pin/spoken",
+      "name": "固定と「これを話した」が反映される",
+      "pass": true,
+      "detail": {
+        "pinned": [
+          "Let me check the latest status of launch and get back to you."
+        ],
+        "meSaid": [
+          "Let me check the latest status of launch and get back to you."
+        ]
+      }
+    },
+    {
+      "id": "q02_restate/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q02_restate/corr",
+      "name": "言い直し・否定を検知して候補を作り直す",
+      "pass": true,
+      "detail": {
+        "issues": [
+          "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+        ],
+        "questionText": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game"
+      }
+    },
+    {
+      "id": "pin/persist",
+      "name": "新しい質問が来ても固定中の候補は消えない・変わらない",
+      "pass": true,
+      "detail": {
+        "pinned": [
+          "Let me check the latest status of launch and get back to you."
+        ],
+        "currentQuestion": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game"
+      }
+    },
+    {
+      "id": "refine",
+      "name": "「こう言いたい」で英語の言い直しが出る",
+      "pass": true,
+      "detail": {
+        "items": [
+          "(mock) 来月のテスト版の結果を見てから決めたいと伝えたい"
+        ],
+        "ms": 354
+      }
+    },
+    {
+      "id": "q03_long/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 3,
+        "error": null
+      }
+    },
+    {
+      "id": "q04_fast/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 3,
+        "error": null
+      }
+    },
+    {
+      "id": "q05_names/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q05_names/names",
+      "name": "固有名詞・金額・日付の聞き取り (誤認識は表示で確認できる)",
+      "pass": true,
+      "detail": {
+        "recognized": "and is the budget around 15,000 by March 3rd",
+        "keywordsFound": [
+          {
+            "k": "zentoria",
+            "found": false
+          },
+          {
+            "k": "solana",
+            "found": false
+          },
+          {
+            "k": "15,000|fifteen thousand|15000",
+            "found": true
+          },
+          {
+            "k": "march",
+            "found": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "q06_contract/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 3,
+        "error": null
+      }
+    },
+    {
+      "id": "q06_contract/confirm",
+      "name": "費用・契約の質問では承諾せず確認・保留の候補だけ",
+      "pass": true,
+      "detail": {
+        "items": [
+          {
+            "strategy": "保留する",
+            "en": "I can't decide that today. Let me check and get back to you.",
+            "ja": "今日は決められません。確認して折り返します。",
+            "confirm": true,
+            "basis": "none"
+          },
+          {
+            "strategy": "条件を尋ねる",
+            "en": "Could you share the details in writing first?",
+            "ja": "まず詳細を書面でいただけますか？",
+            "confirm": true,
+            "basis": "none"
+          },
+          {
+            "strategy": "確認する",
+            "en": "Just to confirm, what exactly are you asking me to agree to?",
+            "ja": "確認ですが、具体的に何への合意を求めていますか？",
+            "confirm": true,
+            "basis": "none"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q07_outside/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 0,
+        "error": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+      }
+    },
+    {
+      "id": "q07_outside/relay-down",
+      "name": "中継停止時はエラーが表示され黙って進まない",
+      "pass": true,
+      "detail": {
+        "issues": [
+          "reply-unreachable: ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。",
+          "reply-unreachable: ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。",
+          "reply-unreachable: ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+        ],
+        "setError": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+      }
+    },
+    {
+      "id": "q08_negation/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 3,
+        "error": null
+      }
+    },
+    {
+      "id": "q08_negation/corr",
+      "name": "言い直し・否定を検知して候補を作り直す",
+      "pass": true,
+      "detail": {
+        "issues": [
+          "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+        ],
+        "questionText": "do you plan to raise money"
+      }
+    },
+    {
+      "id": "q09_short/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q10_statement/stmt",
+      "name": "説明文は質問扱いにならない",
+      "pass": true,
+      "detail": {
+        "kind": "statement",
+        "summary": "質問ではなく説明"
+      }
+    },
+    {
+      "id": "q11_overlap/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q12_gaps/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    }
+  ],
+  "features": {
+    "translatorAvailability": {
+      "before": "downloadable",
+      "after": "downloadable"
+    },
+    "onDeviceSpeech": "downloading",
+    "sttMode": "google-server",
+    "translateProvider": "mock"
+  },
+  "browser": "Chrome/155.0.8059.84",
+  "destinations": [
+    {
+      "stage": "音声認識",
+      "label": "Google 音声認識サーバー (Chrome Web Speech API)",
+      "external": true,
+      "who": "Google"
+    },
+    {
+      "stage": "日本語訳",
+      "label": "モック (送信なし)",
+      "external": false
+    },
+    {
+      "stage": "返答候補",
+      "label": "ローカル中継 (http://127.0.0.1:47333) → Anthropic",
+      "external": true,
+      "who": "Anthropic"
+    }
+  ],
+  "metrics": {
+    "capture_to_first_interim": {
+      "label": "音声取得→認識 (発話開始→最初の途中結果)",
+      "n": 12,
+      "p50": 493,
+      "p95": 758,
+      "min": 217,
+      "max": 758
+    },
+    "question_provisional_to_first_candidate": {
+      "label": "質問(暫定)→最初の候補",
+      "n": 13,
+      "p50": 354,
+      "p95": 364,
+      "min": 353,
+      "max": 364
+    },
+    "partial_to_translation": {
+      "label": "認識→翻訳 (途中訳)",
+      "n": 28,
+      "p50": 472,
+      "p95": 473,
+      "min": 471,
+      "max": 474
+    },
+    "reply_total": {
+      "label": "候補生成の完了まで",
+      "n": 24,
+      "p50": 504,
+      "p95": 657,
+      "min": 503,
+      "max": 657
+    },
+    "speech_end_to_final": {
+      "label": "音声取得→認識 (発話終了→確定)",
+      "n": 12,
+      "p50": 749,
+      "p95": 852,
+      "min": 671,
+      "max": 852
+    },
+    "final_to_translation": {
+      "label": "認識→翻訳 (確定訳)",
+      "n": 10,
+      "p50": 121,
+      "p95": 127,
+      "min": 0,
+      "max": 127
+    },
+    "question_final_to_first_candidate": {
+      "label": "質問の確定→最初の候補",
+      "n": 11,
+      "p50": 353,
+      "p95": 355,
+      "min": 352,
+      "max": 355
+    },
+    "refine_to_result": {
+      "label": "言い直し→結果",
+      "n": 1,
+      "p50": 354,
+      "p95": 354,
+      "min": 354,
+      "max": 354
+    }
+  },
+  "usage": {
+    "requests": 25,
+    "inputTokens": 30000,
+    "outputTokens": 4000,
+    "costUsd": 0,
+    "relaySpentUsd": 0
+  },
+  "audio": {
+    "level": 0,
+    "speaking": false,
+    "trackState": "live",
+    "ctxState": "running",
+    "dropped": {
+      "count": 0,
+      "ms": 0
+    }
+  },
+  "issues": [
+    {
+      "ts": 1792775091905.5999,
+      "level": "info",
+      "code": "corrected",
+      "message": "言い直し・訂正を検知しました。候補を作り直します。"
+    },
+    {
+      "ts": 1792775151224,
+      "level": "error",
+      "code": "reply-unreachable",
+      "message": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+    },
+    {
+      "ts": 1792775153979.5,
+      "level": "error",
+      "code": "reply-unreachable",
+      "message": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+    },
+    {
+      "ts": 1792775154917.4,
+      "level": "error",
+      "code": "reply-unreachable",
+      "message": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
+    },
+    {
+      "ts": 1792775161160.0999,
+      "level": "info",
+      "code": "corrected",
+      "message": "言い直し・訂正を検知しました。候補を作り直します。"
+    }
+  ],
+  "summary": {
+    "playStart_to_firstInterim": {
+      "n": 11,
+      "p50": 647,
+      "p95": 4742
+    },
+    "playEnd_to_lastFinal": {
+      "n": 11,
+      "p50": 592,
+      "p95": 708
+    },
+    "questionFinal_to_firstCandidate": {
+      "n": 10,
+      "p50": 353,
+      "p95": 355
+    },
+    "questionProvisional_to_firstCandidate": {
+      "n": 6,
+      "p50": 354,
+      "p95": 364
+    },
+    "werMean": 0.36
+  },
+  "finishedAt": "2026-10-23T17:06:47.510Z"
+}

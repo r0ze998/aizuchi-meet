@@ -1,0 +1,9 @@
+.dev/extension-key.pem
+.dev/browsers/
+node_modules/
+.chrome-profile/
+*.log
+relay/.env
+relay/relay-token
+test/out/*.log
+docs/profile-from-memory.json

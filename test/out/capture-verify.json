@@ -1,0 +1,237 @@
+{
+  "startedAt": "2026-10-17T09:52:29.240Z",
+  "browser": "Chrome/155.0.8059.84",
+  "extensionId": "hkdniejckkeajnajkpdhgamjolbbcpch",
+  "phases": {
+    "A": {
+      "ok": true
+    },
+    "B": {
+      "ok": true
+    }
+  },
+  "finishedAt": "2026-10-17T09:52:50.719Z",
+  "results": [
+    {
+      "id": "A0",
+      "name": "対象タブでトーン再生開始",
+      "pass": null,
+      "detail": {
+        "toneA": {
+          "state": "running",
+          "hz": 440
+        },
+        "tabId": 809276974
+      }
+    },
+    {
+      "id": "A0b",
+      "name": "パネルの開始操作（同意画面経由）",
+      "pass": null,
+      "detail": {
+        "r1": "clicked",
+        "consentVisible": true
+      }
+    },
+    {
+      "id": "F",
+      "name": "offscreen で使える API",
+      "pass": null,
+      "detail": {
+        "speechRecognition": true,
+        "speechAvailable": true,
+        "translator": true,
+        "languageModel": true,
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+      }
+    },
+    {
+      "id": "C1",
+      "name": "対象タブの音声を取得できる (440Hz トーンを offscreen で検出)",
+      "pass": true,
+      "detail": {
+        "dominantHz": 431,
+        "dominantDb": -27,
+        "rms": 0.125,
+        "captured": [
+          {
+            "fullscreen": false,
+            "status": "active",
+            "tabId": 809276974
+          }
+        ],
+        "trackLabel": ""
+      }
+    },
+    {
+      "id": "C1b",
+      "name": "Web Speech API が tab 音声トラック入力で起動 (マイク要求なし)",
+      "pass": true,
+      "detail": {
+        "sttState": "listening",
+        "sttIssues": []
+      }
+    },
+    {
+      "id": "C2",
+      "name": "元のタブ音声を再生し続ける経路 (取得ストリーム→AudioContext.destination) が有効",
+      "pass": true,
+      "detail": {
+        "passthrough": true,
+        "offscreenCtx": "running",
+        "tabCtx": "running",
+        "note": "スピーカー出力の聴感は自動計測不可。実通話で要確認"
+      }
+    },
+    {
+      "id": "C3",
+      "name": "別タブ (880Hz) の音声が混ざらない",
+      "pass": true,
+      "detail": {
+        "dominantHz": 431,
+        "dominantDb": -25,
+        "peak880": null,
+        "peaks": [
+          {
+            "hz": 431,
+            "db": -25
+          }
+        ]
+      }
+    },
+    {
+      "id": "C3b",
+      "name": "取得音声は対象タブに追従する (440→523Hz)",
+      "pass": true,
+      "detail": {
+        "dominantHz": 517
+      }
+    },
+    {
+      "id": "C4",
+      "name": "任意マイクを有効にしない限り自分のマイクを取得しない",
+      "pass": true,
+      "detail": {
+        "micActive": false,
+        "micState": {
+          "enabled": false,
+          "state": "off"
+        },
+        "trackLabel": ""
+      }
+    },
+    {
+      "id": "C8",
+      "name": "一時停止中も会議音声の再生経路は維持され、再開できる",
+      "pass": true,
+      "detail": {
+        "pausedPassthrough": true,
+        "ctx": "running"
+      }
+    },
+    {
+      "id": "C5",
+      "name": "停止すると取得が止まる (トラック終了・capture 状態解除)、タブ側の再生は継続",
+      "pass": true,
+      "detail": {
+        "captured": [
+          {
+            "fullscreen": false,
+            "status": "stopped",
+            "tabId": 809276974
+          }
+        ],
+        "trackState": "ended",
+        "ctxState": "closed",
+        "tabStillPlaying": {
+          "ctx": "running",
+          "hz": 523
+        },
+        "wiped": true
+      }
+    },
+    {
+      "id": "C6",
+      "name": "開始／停止を 3 回繰り返せる",
+      "pass": true,
+      "detail": {
+        "repeatDetail": [
+          {
+            "i": 0,
+            "hz": 517
+          },
+          {
+            "i": 1,
+            "hz": 517
+          },
+          {
+            "i": 2,
+            "hz": 517
+          }
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "name": "対象タブを閉じると取得が止まる",
+      "pass": true,
+      "detail": {
+        "reason": "track-ended",
+        "issues": [
+          "track-ended"
+        ]
+      }
+    },
+    {
+      "id": "B1",
+      "name": "呼び出し前は getMediaStreamId が拒否される (activeTab 型のゲート)",
+      "pass": true,
+      "detail": {
+        "ok": false,
+        "code": "needs-invoke",
+        "error": "Extension has not been invoked for the current page (see activeTab permission). Chrome pages cannot be captured."
+      }
+    },
+    {
+      "id": "B2a",
+      "name": "拡張の呼び出し経路",
+      "pass": null,
+      "detail": {
+        "via": "osascript",
+        "invokedTab": {
+          "at": 1792230767986,
+          "tabId": 733753838,
+          "title": "Tone A (capture target)",
+          "url": "http://127.0.0.1:65397/tone-a.html",
+          "windowId": 733753837
+        }
+      }
+    },
+    {
+      "id": "B2",
+      "name": "実経路: ショートカットで拡張を呼び出した後は対象タブを取得できる (サイドパネルも開く)",
+      "pass": true,
+      "detail": {
+        "startResult": {
+          "ok": true
+        },
+        "invokedTab": {
+          "at": 1792230767986,
+          "tabId": 733753838,
+          "title": "Tone A (capture target)",
+          "url": "http://127.0.0.1:65397/tone-a.html",
+          "windowId": 733753837
+        },
+        "dominantHz": 431
+      }
+    },
+    {
+      "id": "B3",
+      "name": "実サイドパネルが開いたか (CDP ターゲットに sidepanel.html が存在)",
+      "pass": null,
+      "detail": {
+        "opened": false
+      }
+    }
+  ]
+}

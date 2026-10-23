@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Tone A (capture target)</title></head>
+<body style="font-family:sans-serif;padding:20px">
+<h1>Tone A – capture target tab</h1>
+<p>This tab plays a sine tone. The harness captures this tab's audio.</p>
+<button onclick="startTone(440)">start 440 Hz</button> <button onclick="stopTone()">stop</button>
+<pre id="log"></pre>
+<script>
+let ctx, osc, gain;
+window.startTone = async (hz = 440, vol = 0.3) => {
+  if (!ctx) ctx = new AudioContext();
+  if (osc) { try { osc.stop(); } catch {} }
+  osc = ctx.createOscillator(); gain = ctx.createGain(); gain.gain.value = vol; osc.type = 'sine'; osc.frequency.value = hz;
+  osc.connect(gain).connect(ctx.destination); osc.start();
+  await ctx.resume();
+  document.getElementById('log').textContent = `tone ${hz} Hz, ctx=${ctx.state}`;
+  return { state: ctx.state, hz };
+};
+window.stopTone = () => { try { osc?.stop(); } catch {} osc = null; return true; };
+window.toneState = () => ({ ctx: ctx ? ctx.state : 'none', hz: osc ? osc.frequency.value : 0 });
+</script></body></html>

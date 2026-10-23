@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Speech player (capture target)</title></head>
+<body style="font-family:sans-serif;padding:20px">
+<h1>Speech player – capture target tab</h1>
+<p>Plays synthetic English speech (macOS <code>say</code>) so the pipeline can be tested without a real call.</p>
+<audio id="a" controls></audio>
+<pre id="log"></pre>
+<script>
+const a = document.getElementById('a');
+const log = (m) => { document.getElementById('log').textContent += m + '\n'; };
+window.playFile = (url) => new Promise((resolve, reject) => {
+  a.src = url;
+  const started = { url, startedAt: 0, endedAt: 0 };
+  a.onplaying = () => { started.startedAt = Date.now(); log(`playing ${url} at ${started.startedAt}`); };
+  a.onended = () => { started.endedAt = Date.now(); log(`ended ${url} at ${started.endedAt}`); resolve(started); };
+  a.onerror = () => reject(new Error('audio error ' + url));
+  a.play().catch(reject);
+});
+window.playerState = () => ({ paused: a.paused, t: a.currentTime, src: a.currentSrc });
+</script></body></html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aizuchi</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<header class="bar">
+  <div class="row">
+    <span id="statusPill" class="pill idle">待機</span>
+    <span id="captureDot" class="dot" hidden title="音声を取得中"></span>
+    <span id="tabName" class="tab" title=""></span>
+  </div>
+  <div class="row controls">
+    <button id="btnStart" class="primary">開始</button>
+    <button id="btnPause" hidden>一時停止</button>
+    <button id="btnResume" hidden class="primary">再開</button>
+    <button id="btnStop" hidden class="danger">停止</button>
+    <button id="btnOptions" class="ghost" title="設定・登録情報">⚙ 設定</button>
+  </div>
+  <div id="dest" class="dest" title="このセッションの送信先"></div>
+  <div class="meter" title="取得中の音声レベル"><div id="level"></div></div>
+</header>
+
+<section id="notice" class="notice" hidden></section>
+
+<section id="consent" class="card consent" hidden>
+  <h2>開始前の確認</h2>
+  <p><b>取得する音声:</b> <span id="consentTab">選択したタブ</span> の音声だけ。自分のマイクは取得しません（任意で別に有効化できます）。</p>
+  <p><b>送信先:</b></p>
+  <ul id="consentDest"></ul>
+  <p><b>保存:</b> 録音や全文の文字起こしは保存しません。会議中の文脈はメモリ上だけで保持し、停止時に破棄します。</p>
+  <label class="check"><input type="checkbox" id="consentAck"> 会議参加者への説明・同意と、所属先のルールを確認しました</label>
+  <div class="row">
+    <button id="btnConsentStart" class="primary" disabled>同意して開始</button>
+    <button id="btnConsentCancel" class="ghost">やめる</button>
+  </div>
+</section>
+
+<main>
+  <section class="card" id="secLive">
+    <h2>相手の英語 / 日本語訳</h2>
+    <div id="transcript" class="transcript"><div class="empty">まだ発言を検知していません</div></div>
+    <div id="interim" class="interim" hidden></div>
+  </section>
+
+  <section class="card" id="secAsk">
+    <h2>いま聞かれていること <span id="askState" class="tag" hidden></span></h2>
+    <div id="ask" class="ask">—</div>
+  </section>
+
+  <section class="card" id="secCands">
+    <h2>返答候補 <span id="candState" class="tag" hidden></span></h2>
+    <div id="pinned" class="pinned"></div>
+    <div id="cands"><div class="empty">質問が確定すると、ここに最大3つの候補が出ます</div></div>
+    <details id="oldSets" hidden><summary>前の質問の候補</summary><div id="oldCands"></div></details>
+  </section>
+
+  <section class="card" id="secRefine">
+    <h2>こう言いたい（日本語で）</h2>
+    <form id="refineForm" class="row">
+      <input id="refineInput" type="text" maxlength="300" placeholder="例: 来月のテスト版の結果を見てから決めたい" autocomplete="off">
+      <button class="primary" type="submit">英語にする</button>
+    </form>
+    <div id="refineOut"></div>
+  </section>
+
+  <section class="card" id="secIssues" hidden>
+    <h2>取りこぼし・エラー</h2>
+    <ul id="issues"></ul>
+  </section>
+
+  <details class="card" id="secMetrics">
+    <summary>遅延の計測 (p50 / p95)</summary>
+    <table id="metrics"></table>
+    <div class="row"><button id="btnCopyMetrics" class="ghost">JSON をコピー</button><span id="usage" class="muted"></span></div>
+  </details>
+
+  <details class="card" id="secMic">
+    <summary>自分のマイク（任意）</summary>
+    <p class="muted">自分の発言を文脈に入れるための別入力です。相手の音声とは別経路・別ラベル（自分(マイク)）で扱い、会議の再生経路には混ぜません。</p>
+    <label class="check"><input type="checkbox" id="micToggle"> 自分のマイクを使う</label>
+    <button id="btnMicPerm" class="ghost">マイク許可ページを開く</button>
+    <span id="micState" class="muted"></span>
+  </details>
+</main>
+<script type="module" src="sidepanel.js"></script>
+</body>
+</html>
