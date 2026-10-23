@@ -92,3 +92,7 @@ bun test/harness/e2e-speech.mjs                 # 合成音声で認識→翻訳
 - [docs/KNOWN-LIMITS.md](docs/KNOWN-LIMITS.md) 既知の制約
 - [docs/MEET-TEST-REQUEST.md](docs/MEET-TEST-REQUEST.md) 実際の Meet 通話での確認をあなたに依頼する手順
 - [docs/DEMO.md](docs/DEMO.md) デモ手順
+
+## ライセンス
+
+[MIT](LICENSE)
