@@ -49,13 +49,13 @@ async function startCapture(tabId) {
     const code = /not been invoked|activeTab|invoke/i.test(m) ? 'needs-invoke' : /already|in use|being captured/i.test(m) ? 'already-captured' : /No tab with id|not found/i.test(m) ? 'tab-gone' : 'capture-failed';
     return { ok: false, code, error: m };
   }
-  const stored = await chrome.storage.local.get([STORAGE_KEYS.settings, STORAGE_KEYS.profile, STORAGE_KEYS.relayToken]);
+  const stored = await chrome.storage.local.get([STORAGE_KEYS.settings, STORAGE_KEYS.profile, STORAGE_KEYS.relayToken, STORAGE_KEYS.anthropicKey]);
   const settings = { ...DEFAULT_SETTINGS, ...(stored[STORAGE_KEYS.settings] || {}) };
   const res = await sendToOffscreen({
     type: 'start-capture', streamId, tabId,
     tabTitle: invokedTab?.tabId === tabId ? invokedTab.title : '',
     tabUrl: invokedTab?.tabId === tabId ? invokedTab.url : '',
-    settings, profile: stored[STORAGE_KEYS.profile] || null, relayToken: stored[STORAGE_KEYS.relayToken] || '',
+    settings, profile: stored[STORAGE_KEYS.profile] || null, relayToken: stored[STORAGE_KEYS.relayToken] || '', anthropicKey: stored[STORAGE_KEYS.anthropicKey] || '',
   });
   if (res?.ok) await chrome.storage.session.set({ capturingTabId: tabId });
   return res;
@@ -99,6 +99,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (changes[STORAGE_KEYS.settings]) upd.settings = { ...DEFAULT_SETTINGS, ...(changes[STORAGE_KEYS.settings].newValue || {}) };
   if (changes[STORAGE_KEYS.profile]) upd.profile = changes[STORAGE_KEYS.profile].newValue || null;
   if (changes[STORAGE_KEYS.relayToken]) upd.relayToken = changes[STORAGE_KEYS.relayToken].newValue || '';
+  if (changes[STORAGE_KEYS.anthropicKey]) upd.anthropicKey = changes[STORAGE_KEYS.anthropicKey].newValue || '';
   if (Object.keys(upd).length) sendToOffscreen({ type: 'config-updated', ...upd });
 });
 

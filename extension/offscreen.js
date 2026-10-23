@@ -11,6 +11,9 @@ import { createMockTranslator } from './lib/providers/translate-mock.js';
 import { createRelayReply } from './lib/providers/reply-relay.js';
 import { createMockReply } from './lib/providers/reply-mock.js';
 import { createChromePromptReply } from './lib/providers/reply-chrome-prompt.js';
+import { createDirectReply } from './lib/providers/reply-direct.js';
+import { createDirectTranslator } from './lib/providers/translate-direct.js';
+import { SpendGuard } from './lib/spend.js';
 
 const now = () => performance.timeOrigin + performance.now();
 let session = null;
@@ -19,10 +22,11 @@ let lastSnapshot = null; // final snapshot kept for the panel after stop (sessio
 function broadcast(state) { chrome.runtime.sendMessage({ target: 'panel', type: 'state', state }).catch(() => {}); }
 
 class Session {
-  constructor({ tabId, tabTitle, tabUrl, settings, profile, relayToken }) {
+  constructor({ tabId, tabTitle, tabUrl, settings, profile, relayToken, anthropicKey }) {
     this.tabId = tabId; this.tabTitle = tabTitle || ''; this.tabUrl = tabUrl || '';
     this.settings = { ...DEFAULT_SETTINGS, ...(settings || {}) };
     this.relayToken = relayToken || '';
+    this.apiKey = anthropicKey || ''; // memory only; never in snapshots or logs
     this.status = 'starting'; this.reason = ''; this.startedAt = now();
     this.metrics = new Metrics();
     this.issues = [];
@@ -36,16 +40,21 @@ class Session {
   buildProviders() {
     const s = this.settings;
     this.relay = new RelayClient({ baseUrl: s.relayUrl, token: this.relayToken });
+    this.guard = new SpendGuard({ maxSessionUsd: s.maxSessionUsd, maxReqPerMin: s.maxReqPerMin });
+    const direct = { getKey: () => this.apiKey, model: s.replyModel, baseURL: s.anthropicBaseUrl || undefined, guard: this.guard };
     const onState = (info) => { this.providerStates[info.provider] = info; this.scheduleBroadcast(); };
     this.stt = s.sttProvider === 'mock'
       ? createMockStt({ onUpdate: (u) => this.onSttUpdate(u), onState })
       : createWebSpeechStt({ lang: s.sttLang, processLocally: s.sttProcessLocally, onUpdate: (u) => this.onSttUpdate(u), onState, onIssue: (i) => this.onSttIssue(i), onEvent: (e) => this.onSttEvent(e), now });
-    this.translator = s.translateProvider === 'relay' ? createRelayTranslator({ client: this.relay, onState })
+    this.translator = s.translateProvider === 'direct' ? createDirectTranslator({ ...direct, onState })
+      : s.translateProvider === 'relay' ? createRelayTranslator({ client: this.relay, onState })
       : s.translateProvider === 'mock' ? createMockTranslator({})
       : createChromeTranslator({ onState });
     this.replier = s.replyProvider === 'mock' ? createMockReply({ delayMs: s.mockReplyDelayMs })
       : s.replyProvider === 'chrome-prompt' ? createChromePromptReply({ onState })
+      : s.replyProvider === 'direct' ? createDirectReply({ ...direct, effort: s.replyEffort, onState })
       : createRelayReply({ client: this.relay, onState });
+    if ((s.replyProvider === 'direct' || s.translateProvider === 'direct') && !this.apiKey) this.pushIssue('warn', 'no-key', 'API キーが未設定のため、返答候補は出ません。設定画面の「Anthropic API」でキーを入れてください（訳は使えます）。');
     if (s.translateProvider === 'chrome' && !this.translator.info().supported) this.pushIssue('error', 'translator-missing', 'Chrome Translator API がこの環境にありません。設定で翻訳を「ローカル中継」か「モック」にしてください。');
   }
 
@@ -165,9 +174,11 @@ class Session {
 
   // ---------- misc ----------
   pushIssue(level, code, message) { this.issues.push({ ts: now(), level, code, message }); if (this.issues.length > 60) this.issues.shift(); this.scheduleBroadcast(); }
-  updateConfig({ settings, profile, relayToken }) {
+  updateConfig({ settings, profile, relayToken, anthropicKey }) {
     if (profile !== undefined) this.pipeline.setProfile(profile);
     if (relayToken !== undefined) { this.relayToken = relayToken; this.relay.token = relayToken; }
+    if (anthropicKey !== undefined) this.apiKey = anthropicKey;
+    if (settings) this.guard.setLimits({ maxSessionUsd: settings.maxSessionUsd, maxReqPerMin: settings.maxReqPerMin });
     if (settings) { this.settings = { ...DEFAULT_SETTINGS, ...settings }; this.pushIssue('info', 'settings', '設定を変更しました。提供元の変更は次回の開始から有効です。'); }
     this.scheduleBroadcast();
   }
@@ -182,7 +193,8 @@ class Session {
       ...this.pipeline.snapshot(),
       metrics: this.metrics.snapshot(), issues: this.issues.slice(-20),
       mic: { enabled: this.mic.enabled, state: this.mic.state },
-      settings: { sttProvider: this.settings.sttProvider, translateProvider: this.settings.translateProvider, replyProvider: this.settings.replyProvider, persistSession: this.settings.persistSession },
+      settings: { sttProvider: this.settings.sttProvider, translateProvider: this.settings.translateProvider, replyProvider: this.settings.replyProvider, replyModel: this.settings.replyModel, persistSession: this.settings.persistSession },
+      spend: this.guard.snapshot(),
     };
   }
 }

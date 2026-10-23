@@ -1,6 +1,9 @@
 import { DEFAULT_SETTINGS, STORAGE_KEYS } from './lib/constants.js';
 import { KINDS, emptyProfile, normalizeProfile, detectConflicts } from './lib/profile.js';
 import { RelayClient } from './lib/relay-client.js';
+import { MODELS, PRICES, classifyError } from './lib/claude.js';
+import { makeClient } from './lib/providers/reply-direct.js';
+import Anthropic from './vendor/anthropic-sdk.js';
 import { webSpeechLocalAvailability, webSpeechLocalInstall } from './lib/providers/stt-webspeech.js';
 
 const $ = (id) => document.getElementById(id);
@@ -73,6 +76,11 @@ function renderSettings() {
   $('s_stt').value = settings.sttProvider; $('s_sttLang').value = settings.sttLang; $('s_sttLocal').checked = !!settings.sttProcessLocally;
   $('s_translate').value = settings.translateProvider; $('s_reply').value = settings.replyProvider;
   $('s_relayUrl').value = settings.relayUrl;
+  $('s_replyModel').innerHTML = MODELS.map((m) => `<option value="${m.id}">${esc(m.label)}</option>`).join('');
+  $('s_replyModel').value = settings.replyModel;
+  $('s_maxSessionUsd').value = settings.maxSessionUsd;
+  $('s_maxReqPerMin').value = settings.maxReqPerMin;
+  renderCost();
   for (const k of ['stableMs', 'translateDebounceMs', 'silenceMs', 'turnEndMs', 'provisionalMinWords']) $(`s_${k}`).value = settings[k];
   $('s_persistSession').checked = !!settings.persistSession;
 }
@@ -84,6 +92,9 @@ async function saveSettings() {
   if (!/^http:\/\/(127\.0\.0\.1|localhost|\[::1\])(:\d+)?$/.test(s.relayUrl)) { notice('中継 URL はループバック (http://127.0.0.1:ポート) のみ使えます', 'error'); return; }
   for (const k of ['stableMs', 'translateDebounceMs', 'silenceMs', 'turnEndMs', 'provisionalMinWords']) s[k] = Number($(`s_${k}`).value) || DEFAULT_SETTINGS[k];
   s.persistSession = $('s_persistSession').checked;
+  s.replyModel = MODELS.some((m) => m.id === $('s_replyModel').value) ? $('s_replyModel').value : DEFAULT_SETTINGS.replyModel;
+  s.maxSessionUsd = Math.min(50, Math.max(0.05, Number($('s_maxSessionUsd').value) || DEFAULT_SETTINGS.maxSessionUsd));
+  s.maxReqPerMin = Math.min(120, Math.max(1, Number($('s_maxReqPerMin').value) || DEFAULT_SETTINGS.maxReqPerMin));
   settings = s;
   const token = $('s_relayToken').value.trim();
   const payload = { [STORAGE_KEYS.settings]: settings };
@@ -93,6 +104,47 @@ async function saveSettings() {
   $('settingsSaved').textContent = `保存しました ${new Date().toLocaleTimeString()}${token ? '（トークンも保存）' : ''}`;
 }
 $('btnSaveSettings').addEventListener('click', saveSettings);
+
+// ---- Anthropic API key (direct connection) ----
+function renderCost() {
+  const m = $('s_replyModel').value || settings.replyModel;
+  const p = PRICES[m];
+  const perReq = p ? (2000 * p.in + 400 * p.out) / 1e6 : 0;
+  $('apiCost').textContent = p ? `目安: 1 回の候補生成 約 $${perReq.toFixed(4)}、60 分の会議（約 90 回）で 約 $${(perReq * 90).toFixed(2)}。上限に達すると候補生成を止めます。請求額は Anthropic Console で確認してください。` : '';
+}
+$('s_replyModel').addEventListener('change', async () => { renderCost(); settings.replyModel = $('s_replyModel').value; await chrome.storage.local.set({ [STORAGE_KEYS.settings]: settings }); });
+async function renderKeyState() {
+  const { anthropicKey } = await chrome.storage.local.get(STORAGE_KEYS.anthropicKey);
+  $('apiState').innerHTML = anthropicKey ? `<span class="ok">保存済み（…${esc(anthropicKey.slice(-4))}）</span>` : '<span class="ng">未設定</span>';
+}
+$('btnApiSave').addEventListener('click', async () => {
+  const key = $('api_key').value.trim();
+  if (!key) { notice('キーを貼り付けてから「キーを保存」を押してください', 'error'); return; }
+  if (!/^sk-ant-[A-Za-z0-9_-]{10,}$/.test(key)) { notice('キーの形式が違うようです（sk-ant- で始まる文字列）。貼り付け直してください。', 'error'); return; }
+  await chrome.storage.local.set({ [STORAGE_KEYS.anthropicKey]: key });
+  $('api_key').value = '';
+  const s = { ...settings, replyProvider: 'direct' };
+  settings = s; await chrome.storage.local.set({ [STORAGE_KEYS.settings]: s }); renderSettings();
+  notice('キーを保存し、返答候補を「Anthropic に直接」にしました。「接続を確認」で確かめられます（無料）。', 'info');
+  renderKeyState();
+});
+$('btnApiDelete').addEventListener('click', async () => { await chrome.storage.local.remove(STORAGE_KEYS.anthropicKey); renderKeyState(); notice('キーを削除しました', 'info'); });
+// Checks the key with the Models API (no tokens are used, so this is free).
+$('btnApiCheck').addEventListener('click', async () => {
+  const el = $('apiState');
+  const { anthropicKey } = await chrome.storage.local.get(STORAGE_KEYS.anthropicKey);
+  if (!anthropicKey) { el.innerHTML = '<span class="ng">キーが未設定です</span>'; return; }
+  const model = $('s_replyModel').value || settings.replyModel;
+  el.textContent = '確認中…';
+  try {
+    const m = await makeClient(anthropicKey, { baseURL: settings.anthropicBaseUrl || undefined }).models.retrieve(model);
+    el.innerHTML = `<span class="ok">接続OK</span> ${esc(m.display_name || m.id)} を使えます（…${esc(anthropicKey.slice(-4))}）`;
+  } catch (e) {
+    const code = classifyError(e, Anthropic);
+    const why = { auth: 'キーが無効です（401）', permission: 'このキーではこのモデルを使えません（403）', 'model-not-found': 'モデルが見つかりません（404）', 'unreachable-api': 'Anthropic に接続できません', 'rate-limited': '回数の上限です。少し待ってから' }[code] || (e?.message || String(e)).slice(0, 120);
+    el.innerHTML = `<span class="ng">失敗: ${esc(why)}</span>`;
+  }
+});
 
 $('btnRelayCheck').addEventListener('click', async () => {
   const url = $('s_relayUrl').value.trim();
@@ -131,6 +183,6 @@ $('btnPromptCheck').addEventListener('click', async () => {
   const stored = await chrome.storage.local.get([STORAGE_KEYS.settings, STORAGE_KEYS.profile]);
   settings = { ...DEFAULT_SETTINGS, ...(stored[STORAGE_KEYS.settings] || {}) };
   profile = normalizeProfile(stored[STORAGE_KEYS.profile]);
-  renderProfile(); renderSettings();
+  renderProfile(); renderSettings(); renderKeyState();
   refreshSttLocal(); refreshTranslator();
 })();

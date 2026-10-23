@@ -10,14 +10,20 @@ export async function connect(chrome) {
   return cdp;
 }
 export async function swSession(cdp) {
-  // Opening an extension page wakes the service worker if it is idle.
-  let t = (await cdp.targets()).find((x) => x.type === 'service_worker' && x.url.startsWith(`chrome-extension://${EXT_ID}/`));
-  if (!t) {
-    const tid = await cdp.openTab(extUrl('sidepanel.html'), { background: true });
-    t = await cdp.waitForTarget((x) => x.type === 'service_worker' && x.url.startsWith(`chrome-extension://${EXT_ID}/`), 15000, 'service worker');
-    await cdp.closeTab(tid).catch(() => {});
+  // The service worker can be (re)starting right after launch; retry until the extension API is injected.
+  const isOurs = (x) => x.type === 'service_worker' && x.url.startsWith(`chrome-extension://${EXT_ID}/`);
+  for (let attempt = 0; attempt < 6; attempt++) {
+    let t = (await cdp.targets()).find(isOurs);
+    if (!t) {
+      const tid = await cdp.openTab(extUrl('sidepanel.html'), { background: true });
+      t = await cdp.waitForTarget(isOurs, 15000, 'service worker');
+      await cdp.closeTab(tid).catch(() => {});
+    }
+    const sid = await cdp.attach(t.targetId).catch(() => null);
+    if (sid && (await cdp.evaluate(sid, `typeof chrome !== 'undefined' && !!chrome.storage`).catch(() => false)) === true) return sid;
+    await Bun.sleep(500);
   }
-  return cdp.attach(t.targetId);
+  throw new Error('service worker never became ready');
 }
 export async function offscreenSession(cdp, timeout = 15000) {
   const t = await cdp.waitForTarget((x) => x.url === extUrl('offscreen.html'), timeout, 'offscreen document');

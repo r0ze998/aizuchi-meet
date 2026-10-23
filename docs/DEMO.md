@@ -1,9 +1,8 @@
 # デモ手順
 
-## A. Meet なしで 5 分（合成音声・モック中継・費用ゼロ）
+## A. Meet なしで 5 分（合成音声・偽 API／モック・費用ゼロ）
 
-1. `cd relay && npm start`（mock）。表示されたトークンを拡張の設定画面に保存。
-2. `bun test/harness/e2e-speech.mjs` を実行すると、専用 Chrome が開き、テスト用の英語音声（macOS `say`）を再生しながら、認識 → 端末内翻訳 → 中継（mock）候補まで自動で通します。終了後に `test/out/e2e-speech.json` と `docs/screenshots/e2e-*.png` ができます。
+2. `E2E_REPLY=direct bun test/harness/e2e-speech.mjs` を実行すると、専用 Chrome が開き、テスト用の英語音声（macOS `say`）を再生しながら、認識 → 翻訳 → 拡張から偽 Anthropic API への直接接続で候補まで自動で通します（`E2E_REPLY` なしならモック中継）。終了後に `test/out/e2e-speech*.json` と `docs/screenshots/` の画像ができます。
 3. 手動で見たい場合: 専用 Chrome を `bun -e "import('./test/harness/chrome.mjs').then(m=>m.launchChrome({port:9340,url:'about:blank'}))"` のように起動する代わりに、通常の Chrome に拡張を読み込み、`test/fixtures/speech-player.html` を `python3 -m http.server` などで配信して開き、そのタブでアイコン → 開始 → ページ側で `playFile('audio/q01_status.wav')` を DevTools から呼びます。
 
 ## B. Meet で（docs/MEET-TEST-REQUEST.md）

@@ -6,8 +6,13 @@ export const DEFAULT_SETTINGS = Object.freeze({
   sttProvider: 'webspeech',      // webspeech | mock
   sttLang: 'en-US',
   sttProcessLocally: false,      // Web Speech on-device mode (needs a language pack)
-  translateProvider: 'chrome',   // chrome | relay | mock
-  replyProvider: 'relay',        // relay | chrome-prompt | mock
+  translateProvider: 'chrome',   // chrome | direct | relay | mock
+  replyProvider: 'direct',       // direct | relay | chrome-prompt | mock
+  replyModel: 'claude-opus-5-5', // direct: claude-opus-5-5 | claude-sonnet-5-5 | claude-haiku-5-5
+  replyEffort: 'low',
+  maxSessionUsd: 1.0,            // direct: cost cap per meeting (estimated from API usage)
+  maxReqPerMin: 30,
+  anthropicBaseUrl: '',          // tests only (points the SDK at a local fake API)
   stableMs: 700,                 // interim text unchanged for this long => "partial stable"
   translateDebounceMs: 350,
   silenceMs: 900,                // energy below threshold for this long => speech ended
@@ -25,6 +30,7 @@ export const STORAGE_KEYS = Object.freeze({
   settings: 'settings',
   profile: 'profile',
   relayToken: 'relayToken',
+  anthropicKey: 'anthropicKey',
 });
 
 // Human-readable description of where data goes for a given configuration.
@@ -39,9 +45,11 @@ export function describeDestinations(settings) {
     out.push({ stage: '音声認識', label: 'モック (送信なし)', external: false });
   }
   if (s.translateProvider === 'chrome') out.push({ stage: '日本語訳', label: '端末内 (Chrome Translator API)', external: false });
+  else if (s.translateProvider === 'direct') out.push({ stage: '日本語訳', label: `Anthropic に直接 (${s.replyModel})`, external: true, who: 'Anthropic' });
   else if (s.translateProvider === 'relay') out.push({ stage: '日本語訳', label: `ローカル中継 (${s.relayUrl}) → Anthropic`, external: true, who: 'Anthropic' });
   else out.push({ stage: '日本語訳', label: 'モック (送信なし)', external: false });
-  if (s.replyProvider === 'relay') out.push({ stage: '返答候補', label: `ローカル中継 (${s.relayUrl}) → Anthropic`, external: true, who: 'Anthropic' });
+  if (s.replyProvider === 'direct') out.push({ stage: '返答候補', label: `Anthropic に直接 (${s.replyModel})`, external: true, who: 'Anthropic' });
+  else if (s.replyProvider === 'relay') out.push({ stage: '返答候補', label: `ローカル中継 (${s.relayUrl}) → Anthropic`, external: true, who: 'Anthropic' });
   else if (s.replyProvider === 'chrome-prompt') out.push({ stage: '返答候補', label: '端末内 (Chrome Prompt API / Gemini Nano)', external: false });
   else out.push({ stage: '返答候補', label: 'モック (送信なし)', external: false });
   return out;

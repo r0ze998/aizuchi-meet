@@ -1,5 +1,6 @@
 {
-  "startedAt": "2026-10-23T17:04:10.109Z",
+  "mode": "relay (mock upstream)",
+  "startedAt": "2026-10-23T21:50:11.098Z",
   "extensionId": "hkdniejckkeajnajkpdhgamjolbbcpch",
   "providers": {
     "stt": {
@@ -37,13 +38,13 @@
       "truth": "So, what's the current status of your game project, and when do you plan to launch it?",
       "recognized": "so what's the current status of your game project and when do you plan to launch it",
       "wer": 0,
-      "audioMs": 5179,
+      "audioMs": 5178,
       "latency": {
-        "playStart_to_firstInterim": 940,
-        "playEnd_to_lastFinal": 623,
-        "questionFinal_to_firstCandidate": 353,
-        "questionProvisional_to_firstCandidate": 364,
-        "provisionalBeforeEnd": 2687
+        "playStart_to_firstInterim": 944,
+        "playEnd_to_lastFinal": 625,
+        "questionFinal_to_firstCandidate": 364,
+        "questionProvisional_to_firstCandidate": 366,
+        "provisionalBeforeEnd": 2666
       },
       "translations": [
         {
@@ -80,191 +81,197 @@
       },
       "stt": [
         {
-          "t": -1210,
+          "t": -1216,
           "ev": "start"
         },
         {
-          "t": 940,
+          "t": 944,
           "ev": "result",
           "finals": 0,
           "interimLen": 2
         },
         {
-          "t": 1255,
+          "t": 1244,
           "ev": "result",
           "finals": 0,
           "interimLen": 9
         },
         {
-          "t": 1421,
+          "t": 1424,
           "ev": "result",
           "finals": 0,
           "interimLen": 13
         },
         {
-          "t": 1526,
+          "t": 1543,
           "ev": "result",
           "finals": 0,
           "interimLen": 13
         },
         {
-          "t": 1702,
+          "t": 1722,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1832,
+          "t": 1824,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 2030,
+          "t": 2025,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 2068,
+          "t": 2081,
           "ev": "result",
           "finals": 0,
           "interimLen": 28
         },
         {
-          "t": 2307,
+          "t": 2253,
           "ev": "result",
           "finals": 0,
           "interimLen": 31
         },
         {
-          "t": 2492,
+          "t": 2329,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 31
+        },
+        {
+          "t": 2512,
           "ev": "result",
           "finals": 0,
           "interimLen": 36
         },
         {
-          "t": 2672,
+          "t": 2665,
           "ev": "result",
           "finals": 0,
           "interimLen": 36
         },
         {
-          "t": 2803,
+          "t": 2799,
           "ev": "result",
           "finals": 0,
           "interimLen": 41
         },
         {
-          "t": 2896,
+          "t": 2852,
           "ev": "result",
           "finals": 0,
           "interimLen": 41
         },
         {
-          "t": 2981,
+          "t": 2993,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 3091,
+          "t": 3104,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 3391,
+          "t": 3390,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 3578,
+          "t": 3579,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 3641,
+          "t": 3639,
           "ev": "result",
           "finals": 0,
           "interimLen": 53
         },
         {
-          "t": 3928,
+          "t": 3943,
           "ev": "result",
           "finals": 0,
           "interimLen": 58
         },
         {
-          "t": 4060,
+          "t": 4066,
           "ev": "result",
           "finals": 0,
           "interimLen": 61
         },
         {
-          "t": 4178,
+          "t": 4176,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4234,
+          "t": 4247,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4475,
+          "t": 4462,
           "ev": "result",
           "finals": 0,
           "interimLen": 70
         },
         {
-          "t": 4526,
+          "t": 4546,
           "ev": "result",
           "finals": 0,
           "interimLen": 70
         },
         {
-          "t": 4656,
+          "t": 4643,
           "ev": "result",
           "finals": 0,
           "interimLen": 73
         },
         {
-          "t": 4764,
+          "t": 4772,
           "ev": "result",
           "finals": 0,
           "interimLen": 73
         },
         {
-          "t": 5023,
+          "t": 5052,
           "ev": "result",
           "finals": 0,
           "interimLen": 80
         },
         {
-          "t": 5070,
+          "t": 5099,
           "ev": "result",
           "finals": 0,
           "interimLen": 80
         },
         {
-          "t": 5129,
+          "t": 5172,
           "ev": "result",
           "finals": 0,
           "interimLen": 83
         },
         {
-          "t": 5255,
+          "t": 5250,
           "ev": "result",
           "finals": 0,
           "interimLen": 83
         },
         {
-          "t": 5613,
+          "t": 5610,
           "ev": "result",
           "finals": 0,
           "interimLen": 83
@@ -284,11 +291,11 @@
       "wer": 0,
       "audioMs": 9521,
       "latency": {
-        "playStart_to_firstInterim": 554,
-        "playEnd_to_lastFinal": 576,
-        "questionFinal_to_firstCandidate": 352,
-        "questionProvisional_to_firstCandidate": 354,
-        "provisionalBeforeEnd": 7480
+        "playStart_to_firstInterim": 560,
+        "playEnd_to_lastFinal": 558,
+        "questionFinal_to_firstCandidate": 359,
+        "questionProvisional_to_firstCandidate": 358,
+        "provisionalBeforeEnd": 7472
       },
       "translations": [
         {
@@ -327,49 +334,49 @@
       },
       "stt": [
         {
-          "t": 554,
+          "t": 560,
           "ev": "result",
           "finals": 0,
           "interimLen": 4
         },
         {
-          "t": 656,
+          "t": 650,
           "ev": "result",
           "finals": 0,
           "interimLen": 9
         },
         {
-          "t": 1021,
+          "t": 1020,
           "ev": "result",
           "finals": 0,
           "interimLen": 12
         },
         {
-          "t": 1149,
+          "t": 1151,
           "ev": "result",
           "finals": 0,
           "interimLen": 15
         },
         {
-          "t": 1259,
+          "t": 1260,
           "ev": "result",
           "finals": 0,
           "interimLen": 15
         },
         {
-          "t": 1315,
+          "t": 1338,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1435,
+          "t": 1443,
           "ev": "result",
           "finals": 0,
           "interimLen": 22
         },
         {
-          "t": 1616,
+          "t": 1621,
           "ev": "result",
           "finals": 0,
           "interimLen": 27
@@ -387,121 +394,121 @@
           "interimLen": 27
         },
         {
-          "t": 2041,
+          "t": 2049,
           "ev": "result",
           "finals": 0,
           "interimLen": 33
         },
         {
-          "t": 2089,
+          "t": 2095,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2210,
+          "t": 2217,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2642,
+          "t": 2634,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2688,
+          "t": 2689,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2928,
+          "t": 2950,
           "ev": "result",
           "finals": 0,
           "interimLen": 46
         },
         {
-          "t": 3531,
+          "t": 3551,
           "ev": "result",
           "finals": 0,
           "interimLen": 46
         },
         {
-          "t": 3660,
+          "t": 3661,
           "ev": "result",
           "finals": 0,
           "interimLen": 52
         },
         {
-          "t": 4260,
+          "t": 4266,
           "ev": "result",
           "finals": 0,
           "interimLen": 52
         },
         {
-          "t": 4444,
+          "t": 4439,
           "ev": "result",
           "finals": 0,
           "interimLen": 59
         },
         {
-          "t": 4631,
+          "t": 4639,
           "ev": "result",
           "finals": 0,
           "interimLen": 64
         },
         {
-          "t": 5031,
+          "t": 5035,
           "ev": "result",
           "finals": 0,
           "interimLen": 64
         },
         {
-          "t": 5226,
+          "t": 5230,
           "ev": "result",
           "finals": 0,
           "interimLen": 64
         },
         {
-          "t": 5527,
+          "t": 5515,
           "ev": "result",
           "finals": 0,
           "interimLen": 69
         },
         {
-          "t": 5653,
+          "t": 5647,
           "ev": "result",
           "finals": 0,
           "interimLen": 71
         },
         {
-          "t": 5708,
+          "t": 5713,
           "ev": "result",
           "finals": 0,
           "interimLen": 78
         },
         {
-          "t": 6128,
+          "t": 6124,
           "ev": "result",
           "finals": 0,
           "interimLen": 85
         },
         {
-          "t": 6250,
+          "t": 6253,
           "ev": "result",
           "finals": 0,
           "interimLen": 88
         },
         {
-          "t": 6308,
+          "t": 6323,
           "ev": "result",
           "finals": 0,
           "interimLen": 88
         },
         {
-          "t": 6433,
+          "t": 6435,
           "ev": "result",
           "finals": 0,
           "interimLen": 92
@@ -513,115 +520,115 @@
           "interimLen": 95
         },
         {
-          "t": 6864,
+          "t": 6844,
           "ev": "result",
           "finals": 0,
           "interimLen": 95
         },
         {
-          "t": 7044,
+          "t": 7025,
           "ev": "result",
           "finals": 0,
           "interimLen": 95
         },
         {
-          "t": 7289,
+          "t": 7263,
           "ev": "result",
           "finals": 0,
           "interimLen": 99
         },
         {
-          "t": 7343,
+          "t": 7331,
           "ev": "result",
           "finals": 0,
           "interimLen": 103
         },
         {
-          "t": 7413,
+          "t": 7401,
           "ev": "result",
           "finals": 0,
           "interimLen": 107
         },
         {
-          "t": 7822,
+          "t": 7827,
           "ev": "result",
           "finals": 0,
           "interimLen": 116
         },
         {
-          "t": 7888,
+          "t": 7883,
           "ev": "result",
           "finals": 0,
           "interimLen": 116
         },
         {
-          "t": 7916,
+          "t": 7924,
           "ev": "result",
           "finals": 0,
           "interimLen": 116
         },
         {
-          "t": 7973,
+          "t": 7977,
           "ev": "result",
           "finals": 0,
           "interimLen": 119
         },
         {
-          "t": 8342,
+          "t": 8337,
           "ev": "result",
           "finals": 0,
           "interimLen": 123
         },
         {
-          "t": 8392,
+          "t": 8411,
           "ev": "result",
           "finals": 0,
           "interimLen": 123
         },
         {
-          "t": 8585,
+          "t": 8578,
           "ev": "result",
           "finals": 0,
           "interimLen": 123
         },
         {
-          "t": 8654,
+          "t": 8655,
           "ev": "result",
           "finals": 0,
           "interimLen": 125
         },
         {
-          "t": 8843,
+          "t": 8842,
           "ev": "result",
           "finals": 0,
           "interimLen": 126
         },
         {
-          "t": 8958,
+          "t": 8945,
           "ev": "result",
           "finals": 0,
           "interimLen": 126
         },
         {
-          "t": 8995,
+          "t": 9023,
           "ev": "result",
           "finals": 0,
           "interimLen": 133
         },
         {
-          "t": 9265,
+          "t": 9261,
           "ev": "result",
           "finals": 0,
           "interimLen": 137
         },
         {
-          "t": 9441,
+          "t": 9434,
           "ev": "result",
           "finals": 0,
           "interimLen": 142
         },
         {
-          "t": 9584,
+          "t": 9589,
           "ev": "result",
           "finals": 0,
           "interimLen": 142
@@ -633,7 +640,7 @@
           "interimLen": 142
         },
         {
-          "t": 10097,
+          "t": 10079,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -643,20 +650,20 @@
     {
       "id": "q03_long",
       "truth": "Let me give you some context first. We have been looking at a few blockchain games this quarter, and most of them struggle with onboarding. Players do not want to deal with wallets. So my question is this: how does your project handle onboarding for players who have never used a wallet before?",
-      "recognized": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project",
-      "wer": 0.208,
-      "audioMs": 16789,
+      "recognized": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project handle onboarding for players who have never used a wallet before",
+      "wer": 0,
+      "audioMs": 16790,
       "latency": {
-        "playStart_to_firstInterim": 644,
-        "playEnd_to_lastFinal": 682,
-        "questionFinal_to_firstCandidate": 353,
-        "questionProvisional_to_firstCandidate": 353,
-        "provisionalBeforeEnd": 4044
+        "playStart_to_firstInterim": 647,
+        "playEnd_to_lastFinal": 650,
+        "questionFinal_to_firstCandidate": 359,
+        "questionProvisional_to_firstCandidate": 354,
+        "provisionalBeforeEnd": 5098
       },
       "translations": [
         {
-          "en": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project",
-          "ja": "〔モック訳〕let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project",
+          "en": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project handle onboarding for players who have never used a wallet before",
+          "ja": "〔モック訳〕let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project handle onboarding for players who have never used a wallet before",
           "state": "final"
         }
       ],
@@ -695,631 +702,643 @@
       },
       "stt": [
         {
-          "t": 644,
+          "t": 647,
           "ev": "result",
           "finals": 0,
           "interimLen": 4
         },
         {
-          "t": 725,
+          "t": 710,
           "ev": "result",
           "finals": 0,
           "interimLen": 7
         },
         {
-          "t": 824,
+          "t": 817,
           "ev": "result",
           "finals": 0,
           "interimLen": 12
         },
         {
-          "t": 1002,
+          "t": 1068,
           "ev": "result",
           "finals": 0,
           "interimLen": 16
         },
         {
-          "t": 1236,
+          "t": 1246,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1317,
+          "t": 1302,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1420,
+          "t": 1397,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1623,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 21
-        },
-        {
-          "t": 1695,
+          "t": 1680,
           "ev": "result",
           "finals": 0,
           "interimLen": 26
         },
         {
-          "t": 1758,
+          "t": 1734,
           "ev": "result",
           "finals": 0,
           "interimLen": 29
         },
         {
-          "t": 1851,
+          "t": 1822,
           "ev": "result",
           "finals": 0,
           "interimLen": 29
         },
         {
-          "t": 2269,
+          "t": 2294,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2353,
+          "t": 2331,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2698,
+          "t": 2740,
           "ev": "result",
           "finals": 0,
           "interimLen": 38
         },
         {
-          "t": 2870,
+          "t": 2873,
           "ev": "result",
           "finals": 0,
           "interimLen": 38
         },
         {
-          "t": 2955,
+          "t": 2934,
           "ev": "result",
           "finals": 0,
           "interimLen": 43
         },
         {
-          "t": 3320,
+          "t": 3337,
           "ev": "result",
           "finals": 0,
           "interimLen": 48
         },
         {
-          "t": 3475,
+          "t": 3525,
           "ev": "result",
           "finals": 0,
           "interimLen": 56
         },
         {
-          "t": 3561,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 56
-        },
-        {
-          "t": 3774,
+          "t": 3812,
           "ev": "result",
           "finals": 0,
           "interimLen": 59
         },
         {
-          "t": 3906,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 59
-        },
-        {
-          "t": 3968,
+          "t": 3955,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4066,
+          "t": 4116,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4320,
+          "t": 4375,
           "ev": "result",
           "finals": 0,
           "interimLen": 71
         },
         {
-          "t": 4376,
+          "t": 4431,
           "ev": "result",
           "finals": 0,
           "interimLen": 71
         },
         {
-          "t": 4567,
+          "t": 4561,
           "ev": "result",
           "finals": 0,
           "interimLen": 76
         },
         {
-          "t": 4851,
+          "t": 4838,
           "ev": "result",
           "finals": 0,
           "interimLen": 82
         },
         {
-          "t": 5083,
+          "t": 5101,
           "ev": "result",
           "finals": 0,
           "interimLen": 87
         },
         {
-          "t": 5181,
+          "t": 5177,
           "ev": "result",
           "finals": 0,
           "interimLen": 82
         },
         {
-          "t": 5222,
+          "t": 5212,
           "ev": "result",
           "finals": 0,
           "interimLen": 87
         },
         {
-          "t": 5473,
+          "t": 5459,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 87
+        },
+        {
+          "t": 5539,
           "ev": "result",
           "finals": 0,
           "interimLen": 93
         },
         {
-          "t": 5598,
+          "t": 5638,
           "ev": "result",
           "finals": 0,
           "interimLen": 95
         },
         {
-          "t": 5806,
+          "t": 5795,
           "ev": "result",
           "finals": 0,
           "interimLen": 95
         },
         {
-          "t": 5941,
+          "t": 5925,
           "ev": "result",
           "finals": 0,
           "interimLen": 99
         },
         {
-          "t": 6182,
+          "t": 6218,
           "ev": "result",
           "finals": 0,
           "interimLen": 99
         },
         {
-          "t": 6287,
+          "t": 6284,
           "ev": "result",
           "finals": 0,
           "interimLen": 104
         },
         {
-          "t": 6423,
+          "t": 6463,
           "ev": "result",
           "finals": 0,
           "interimLen": 107
         },
         {
-          "t": 6550,
+          "t": 6540,
           "ev": "result",
           "finals": 0,
           "interimLen": 107
         },
         {
-          "t": 6611,
+          "t": 6646,
           "ev": "result",
           "finals": 0,
           "interimLen": 112
         },
         {
-          "t": 6877,
+          "t": 6872,
           "ev": "result",
           "finals": 0,
           "interimLen": 112
         },
         {
-          "t": 7018,
+          "t": 7027,
           "ev": "result",
           "finals": 0,
           "interimLen": 118
         },
         {
-          "t": 7090,
+          "t": 7112,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 118
+        },
+        {
+          "t": 7161,
           "ev": "result",
           "finals": 0,
           "interimLen": 121
         },
         {
-          "t": 7198,
+          "t": 7251,
           "ev": "result",
           "finals": 0,
           "interimLen": 126
         },
         {
-          "t": 7485,
+          "t": 7468,
           "ev": "result",
           "finals": 0,
           "interimLen": 129
         },
         {
-          "t": 7621,
+          "t": 7614,
           "ev": "result",
           "finals": 0,
           "interimLen": 134
         },
         {
-          "t": 7679,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 134
-        },
-        {
-          "t": 7741,
+          "t": 7736,
           "ev": "result",
           "finals": 0,
           "interimLen": 137
         },
         {
-          "t": 7803,
+          "t": 7838,
           "ev": "result",
           "finals": 0,
           "interimLen": 137
         },
         {
-          "t": 8358,
+          "t": 8348,
           "ev": "result",
           "finals": 0,
           "interimLen": 137
         },
         {
-          "t": 8474,
+          "t": 8509,
           "ev": "result",
           "finals": 0,
           "interimLen": 142
         },
         {
-          "t": 8669,
+          "t": 8685,
           "ev": "result",
           "finals": 0,
           "interimLen": 145
         },
         {
-          "t": 8791,
+          "t": 8814,
           "ev": "result",
           "finals": 0,
           "interimLen": 148
         },
         {
-          "t": 8887,
+          "t": 8881,
           "ev": "result",
           "finals": 0,
           "interimLen": 152
         },
         {
-          "t": 9112,
+          "t": 9098,
           "ev": "result",
           "finals": 0,
           "interimLen": 157
         },
         {
-          "t": 9234,
+          "t": 9276,
           "ev": "result",
           "finals": 0,
           "interimLen": 157
         },
         {
-          "t": 9369,
+          "t": 9407,
           "ev": "result",
           "finals": 0,
           "interimLen": 157
         },
         {
-          "t": 9470,
+          "t": 9458,
           "ev": "result",
           "finals": 0,
           "interimLen": 160
         },
         {
-          "t": 9533,
+          "t": 9520,
           "ev": "result",
           "finals": 0,
           "interimLen": 165
         },
         {
-          "t": 9651,
+          "t": 9637,
           "ev": "result",
           "finals": 0,
           "interimLen": 170
         },
         {
-          "t": 9701,
+          "t": 9690,
           "ev": "result",
           "finals": 0,
           "interimLen": 170
         },
         {
-          "t": 10083,
+          "t": 10066,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 170
+        },
+        {
+          "t": 10110,
           "ev": "result",
           "finals": 0,
           "interimLen": 175
         },
         {
-          "t": 10134,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 175
-        },
-        {
-          "t": 10212,
+          "t": 10239,
           "ev": "result",
           "finals": 0,
           "interimLen": 178
         },
         {
-          "t": 10251,
+          "t": 10841,
           "ev": "result",
           "finals": 0,
           "interimLen": 178
         },
         {
-          "t": 10801,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 178
-        },
-        {
-          "t": 11040,
+          "t": 11021,
           "ev": "result",
           "finals": 0,
           "interimLen": 181
         },
         {
-          "t": 11222,
+          "t": 11210,
           "ev": "result",
           "finals": 0,
           "interimLen": 184
         },
         {
-          "t": 11515,
+          "t": 11499,
           "ev": "result",
           "finals": 0,
           "interimLen": 193
         },
         {
-          "t": 11641,
+          "t": 11625,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 193
+        },
+        {
+          "t": 11692,
           "ev": "result",
           "finals": 0,
           "interimLen": 196
         },
         {
-          "t": 11825,
+          "t": 11824,
           "ev": "result",
           "finals": 0,
           "interimLen": 196
         },
         {
-          "t": 11920,
+          "t": 11921,
           "ev": "result",
           "finals": 0,
           "interimLen": 201
         },
         {
-          "t": 12120,
+          "t": 12103,
           "ev": "result",
           "finals": 0,
           "interimLen": 201
         },
         {
-          "t": 12251,
+          "t": 12274,
           "ev": "result",
           "finals": 0,
           "interimLen": 201
         },
         {
-          "t": 12479,
+          "t": 12539,
           "ev": "result",
           "finals": 0,
           "interimLen": 205
         },
         {
-          "t": 12573,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 205
-        },
-        {
-          "t": 12745,
+          "t": 12717,
           "ev": "result",
           "finals": 0,
           "interimLen": 210
         },
         {
-          "t": 13074,
+          "t": 12934,
           "ev": "result",
           "finals": 0,
           "interimLen": 215
         },
         {
-          "t": 13265,
+          "t": 13024,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 210
+        },
+        {
+          "t": 13061,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 215
+        },
+        {
+          "t": 13110,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 215
+        },
+        {
+          "t": 13243,
           "ev": "result",
           "finals": 0,
           "interimLen": 223
         },
         {
-          "t": 13315,
+          "t": 13303,
           "ev": "result",
           "finals": 0,
           "interimLen": 223
         },
         {
-          "t": 13674,
+          "t": 13660,
           "ev": "result",
           "finals": 0,
           "interimLen": 228
         },
         {
-          "t": 13866,
+          "t": 13849,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 228
+        },
+        {
+          "t": 13898,
           "ev": "result",
           "finals": 0,
           "interimLen": 230
         },
         {
-          "t": 14097,
+          "t": 14092,
           "ev": "result",
           "finals": 0,
           "interimLen": 233
         },
         {
-          "t": 14226,
+          "t": 14217,
           "ev": "result",
           "finals": 0,
           "interimLen": 239
         },
         {
-          "t": 14394,
+          "t": 14392,
           "ev": "result",
           "finals": 0,
           "interimLen": 241
         },
         {
-          "t": 14473,
+          "t": 14500,
           "ev": "result",
           "finals": 0,
           "interimLen": 241
         },
         {
-          "t": 14650,
+          "t": 14631,
           "ev": "result",
           "finals": 0,
           "interimLen": 245
         },
         {
-          "t": 14827,
+          "t": 14841,
           "ev": "result",
           "finals": 0,
           "interimLen": 250
         },
         {
-          "t": 14939,
+          "t": 14928,
           "ev": "result",
           "finals": 0,
           "interimLen": 253
         },
         {
-          "t": 14987,
+          "t": 14979,
           "ev": "result",
           "finals": 0,
           "interimLen": 253
         },
         {
-          "t": 15143,
+          "t": 15102,
           "ev": "result",
           "finals": 0,
           "interimLen": 257
         },
         {
-          "t": 15181,
+          "t": 15240,
           "ev": "result",
           "finals": 0,
           "interimLen": 262
         },
         {
-          "t": 15243,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 262
-        },
-        {
-          "t": 15430,
+          "t": 15409,
           "ev": "result",
           "finals": 0,
           "interimLen": 268
         },
         {
-          "t": 15534,
+          "t": 15522,
           "ev": "result",
           "finals": 0,
           "interimLen": 268
         },
         {
-          "t": 15718,
+          "t": 15700,
           "ev": "result",
           "finals": 0,
           "interimLen": 268
         },
         {
-          "t": 15779,
+          "t": 15838,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15890,
           "ev": "result",
           "finals": 0,
           "interimLen": 273
         },
         {
-          "t": 16009,
+          "t": 16026,
           "ev": "result",
           "finals": 0,
           "interimLen": 273
         },
         {
-          "t": 16137,
+          "t": 16127,
           "ev": "result",
           "finals": 0,
           "interimLen": 275
         },
         {
-          "t": 16322,
+          "t": 16353,
           "ev": "result",
           "finals": 0,
           "interimLen": 280
         },
         {
-          "t": 16370,
+          "t": 16433,
           "ev": "result",
           "finals": 0,
           "interimLen": 282
         },
         {
-          "t": 16515,
+          "t": 16491,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 282
+        },
+        {
+          "t": 16546,
           "ev": "result",
           "finals": 0,
           "interimLen": 289
         },
         {
-          "t": 16747,
+          "t": 16711,
           "ev": "result",
           "finals": 0,
           "interimLen": 289
         },
         {
-          "t": 16987,
+          "t": 17018,
           "ev": "result",
           "finals": 0,
           "interimLen": 289
         },
         {
-          "t": 17119,
+          "t": 17136,
           "ev": "result",
           "finals": 0,
           "interimLen": 289
         },
         {
-          "t": 17471,
+          "t": 17440,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -1378,20 +1397,20 @@
     {
       "id": "q05_names",
       "truth": "Is Zentoria built on Solana, and is the budget around fifteen thousand dollars by March third?",
-      "recognized": "and is the budget around 15,000 by March 3rd",
+      "recognized": "and is the budget around $15,000 by March 3rd",
       "wer": 0.563,
       "audioMs": 5667,
       "latency": {
-        "playStart_to_firstInterim": 798,
-        "playEnd_to_lastFinal": 571,
-        "questionFinal_to_firstCandidate": 354,
+        "playStart_to_firstInterim": 767,
+        "playEnd_to_lastFinal": 566,
+        "questionFinal_to_firstCandidate": 355,
         "questionProvisional_to_firstCandidate": null,
         "provisionalBeforeEnd": null
       },
       "translations": [
         {
-          "en": "and is the budget around 15,000 by March 3rd",
-          "ja": "〔モック訳〕and is the budget around 15,000 by March 3rd",
+          "en": "and is the budget around $15,000 by March 3rd",
+          "ja": "〔モック訳〕and is the budget around $15,000 by March 3rd",
           "state": "final"
         }
       ],
@@ -1423,109 +1442,127 @@
       },
       "stt": [
         {
-          "t": 798,
+          "t": 767,
           "ev": "result",
           "finals": 0,
           "interimLen": 3
         },
         {
-          "t": 990,
+          "t": 936,
           "ev": "result",
           "finals": 0,
           "interimLen": 6
         },
         {
-          "t": 1046,
+          "t": 1125,
           "ev": "result",
           "finals": 0,
           "interimLen": 12
         },
         {
-          "t": 2464,
+          "t": 1732,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 2495,
           "ev": "result",
           "finals": 0,
           "interimLen": 4
         },
         {
-          "t": 3142,
+          "t": 2741,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 7
+        },
+        {
+          "t": 3163,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 3305,
+          "t": 3333,
           "ev": "result",
           "finals": 0,
           "interimLen": 25
         },
         {
-          "t": 3918,
+          "t": 3948,
           "ev": "result",
           "finals": 0,
           "interimLen": 25
         },
         {
-          "t": 4341,
+          "t": 4402,
           "ev": "result",
           "finals": 0,
           "interimLen": 28
         },
         {
-          "t": 4417,
+          "t": 4444,
           "ev": "result",
           "finals": 0,
-          "interimLen": 29
+          "interimLen": 30
         },
         {
-          "t": 4515,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 32
-        },
-        {
-          "t": 4925,
+          "t": 4658,
           "ev": "result",
           "finals": 0,
           "interimLen": 32
         },
         {
-          "t": 5054,
+          "t": 4767,
           "ev": "result",
           "finals": 0,
-          "interimLen": 35
+          "interimLen": 33
         },
         {
-          "t": 5118,
+          "t": 4956,
           "ev": "result",
           "finals": 0,
-          "interimLen": 35
+          "interimLen": 33
         },
         {
-          "t": 5192,
+          "t": 5007,
           "ev": "result",
           "finals": 0,
-          "interimLen": 41
+          "interimLen": 36
         },
         {
-          "t": 5665,
+          "t": 5246,
           "ev": "result",
           "finals": 0,
-          "interimLen": 43
+          "interimLen": 42
         },
         {
-          "t": 5722,
+          "t": 5330,
           "ev": "result",
           "finals": 0,
-          "interimLen": 45
+          "interimLen": 42
         },
         {
-          "t": 5794,
+          "t": 5613,
           "ev": "result",
           "finals": 0,
-          "interimLen": 45
+          "interimLen": 44
         },
         {
-          "t": 6238,
+          "t": 5743,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 46
+        },
+        {
+          "t": 5830,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 46
+        },
+        {
+          "t": 6233,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -1539,11 +1576,11 @@
       "wer": 0.176,
       "audioMs": 4854,
       "latency": {
-        "playStart_to_firstInterim": 635,
-        "playEnd_to_lastFinal": 592,
-        "questionFinal_to_firstCandidate": 353,
-        "questionProvisional_to_firstCandidate": 354,
-        "provisionalBeforeEnd": 3093
+        "playStart_to_firstInterim": 632,
+        "playEnd_to_lastFinal": 613,
+        "questionFinal_to_firstCandidate": 356,
+        "questionProvisional_to_firstCandidate": 356,
+        "provisionalBeforeEnd": 3072
       },
       "translations": [
         {
@@ -1587,193 +1624,181 @@
       },
       "stt": [
         {
-          "t": 635,
+          "t": 632,
           "ev": "result",
           "finals": 0,
           "interimLen": 4
         },
         {
-          "t": 692,
+          "t": 680,
           "ev": "result",
           "finals": 0,
           "interimLen": 8
         },
         {
-          "t": 867,
+          "t": 861,
           "ev": "result",
           "finals": 0,
           "interimLen": 13
         },
         {
-          "t": 929,
+          "t": 958,
           "ev": "result",
           "finals": 0,
           "interimLen": 15
         },
         {
-          "t": 1051,
+          "t": 1045,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1240,
+          "t": 1246,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1284,
+          "t": 1271,
           "ev": "result",
           "finals": 0,
           "interimLen": 20
         },
         {
-          "t": 1428,
+          "t": 1416,
           "ev": "result",
           "finals": 0,
           "interimLen": 24
         },
         {
-          "t": 1525,
+          "t": 1535,
           "ev": "result",
           "finals": 0,
           "interimLen": 26
         },
         {
-          "t": 1664,
+          "t": 1656,
           "ev": "result",
           "finals": 0,
           "interimLen": 26
         },
         {
-          "t": 1761,
+          "t": 1782,
           "ev": "result",
           "finals": 0,
           "interimLen": 32
         },
         {
-          "t": 1892,
+          "t": 1880,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2121,
+          "t": 2135,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2367,
+          "t": 2394,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2499,
+          "t": 2500,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2626,
+          "t": 2651,
           "ev": "result",
           "finals": 0,
           "interimLen": 39
         },
         {
-          "t": 2741,
+          "t": 2772,
           "ev": "result",
           "finals": 0,
           "interimLen": 40
         },
         {
-          "t": 3111,
+          "t": 3084,
           "ev": "result",
           "finals": 0,
           "interimLen": 43
         },
         {
-          "t": 3475,
+          "t": 3468,
           "ev": "result",
           "finals": 0,
           "interimLen": 47
         },
         {
-          "t": 3634,
+          "t": 3628,
           "ev": "result",
           "finals": 0,
           "interimLen": 52
         },
         {
-          "t": 3700,
+          "t": 3678,
           "ev": "result",
           "finals": 0,
           "interimLen": 52
         },
         {
-          "t": 3881,
+          "t": 3814,
           "ev": "result",
           "finals": 0,
           "interimLen": 56
         },
         {
-          "t": 4053,
+          "t": 4045,
           "ev": "result",
           "finals": 0,
           "interimLen": 61
         },
         {
-          "t": 4153,
+          "t": 4175,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4237,
+          "t": 4231,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4345,
+          "t": 4353,
           "ev": "result",
           "finals": 0,
           "interimLen": 70
         },
         {
-          "t": 4471,
+          "t": 4415,
           "ev": "result",
           "finals": 0,
           "interimLen": 70
         },
         {
-          "t": 4701,
+          "t": 4777,
           "ev": "result",
           "finals": 0,
           "interimLen": 75
         },
         {
-          "t": 4755,
+          "t": 4946,
           "ev": "result",
           "finals": 0,
           "interimLen": 75
         },
         {
-          "t": 4931,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 75
-        },
-        {
-          "t": 5433,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 75
-        },
-        {
-          "t": 5446,
+          "t": 5467,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -1783,20 +1808,20 @@
     {
       "id": "q07_outside",
       "truth": "What is your opinion on the latest Unreal Engine pricing changes announced last month?",
-      "recognized": "what is your opinion on the latest Unreal Engine",
-      "wer": 0.357,
+      "recognized": "what is your opinion on the latest Unreal Engine pricing changes announced last month",
+      "wer": 0,
       "audioMs": 5086,
       "latency": {
-        "playStart_to_firstInterim": 647,
-        "playEnd_to_lastFinal": 451,
+        "playStart_to_firstInterim": 618,
+        "playEnd_to_lastFinal": 466,
         "questionFinal_to_firstCandidate": null,
         "questionProvisional_to_firstCandidate": null,
-        "provisionalBeforeEnd": 3243
+        "provisionalBeforeEnd": 3257
       },
       "translations": [
         {
-          "en": "what is your opinion on the latest Unreal Engine",
-          "ja": "〔モック訳〕what is your opinion on the latest Unreal Engine",
+          "en": "what is your opinion on the latest Unreal Engine pricing changes announced last month",
+          "ja": "〔モック訳〕what is your opinion on the latest Unreal Engine pricing changes announced last month",
           "state": "final"
         }
       ],
@@ -1817,205 +1842,205 @@
       },
       "stt": [
         {
-          "t": 647,
+          "t": 618,
           "ev": "result",
           "finals": 0,
           "interimLen": 5
         },
         {
-          "t": 772,
+          "t": 766,
           "ev": "result",
           "finals": 0,
           "interimLen": 8
         },
         {
-          "t": 945,
+          "t": 936,
           "ev": "result",
           "finals": 0,
           "interimLen": 13
         },
         {
-          "t": 1135,
+          "t": 1132,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1180,
+          "t": 1185,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1252,
+          "t": 1234,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1362,
+          "t": 1373,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1413,
+          "t": 1414,
           "ev": "result",
           "finals": 0,
           "interimLen": 24
         },
         {
-          "t": 1551,
+          "t": 1553,
           "ev": "result",
           "finals": 0,
           "interimLen": 28
         },
         {
-          "t": 1763,
+          "t": 1767,
           "ev": "result",
           "finals": 0,
           "interimLen": 28
         },
         {
-          "t": 1843,
+          "t": 1829,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2008,
+          "t": 1998,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2140,
+          "t": 2136,
           "ev": "result",
           "finals": 0,
           "interimLen": 35
         },
         {
-          "t": 2264,
+          "t": 2238,
           "ev": "result",
           "finals": 0,
           "interimLen": 38
         },
         {
-          "t": 2387,
+          "t": 2378,
           "ev": "result",
           "finals": 0,
           "interimLen": 40
         },
         {
-          "t": 2451,
+          "t": 2437,
           "ev": "result",
           "finals": 0,
           "interimLen": 40
         },
         {
-          "t": 2507,
+          "t": 2477,
           "ev": "result",
           "finals": 0,
           "interimLen": 42
         },
         {
-          "t": 2696,
+          "t": 2668,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 3118,
+          "t": 3086,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3169,
           "ev": "result",
           "finals": 0,
           "interimLen": 54
         },
         {
-          "t": 3216,
+          "t": 3274,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 3288,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 57
-        },
-        {
-          "t": 3635,
+          "t": 3641,
           "ev": "result",
           "finals": 0,
           "interimLen": 63
         },
         {
-          "t": 3713,
+          "t": 3690,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 3805,
+          "t": 3867,
           "ev": "result",
           "finals": 0,
           "interimLen": 65
         },
         {
-          "t": 4127,
+          "t": 4184,
           "ev": "result",
           "finals": 0,
           "interimLen": 69
         },
         {
-          "t": 4236,
+          "t": 4237,
           "ev": "result",
           "finals": 0,
           "interimLen": 73
         },
         {
-          "t": 4316,
+          "t": 4286,
           "ev": "result",
           "finals": 0,
           "interimLen": 73
         },
         {
-          "t": 4364,
+          "t": 4372,
           "ev": "result",
           "finals": 0,
           "interimLen": 75
         },
         {
-          "t": 4599,
+          "t": 4593,
           "ev": "result",
           "finals": 0,
           "interimLen": 80
         },
         {
-          "t": 4780,
+          "t": 4779,
           "ev": "result",
           "finals": 0,
           "interimLen": 86
         },
         {
-          "t": 4958,
+          "t": 4961,
           "ev": "result",
           "finals": 0,
           "interimLen": 86
         },
         {
-          "t": 5189,
+          "t": 5194,
           "ev": "result",
           "finals": 0,
           "interimLen": 86
         },
         {
-          "t": 5529,
+          "t": 5534,
           "ev": "result",
           "finals": 0,
           "interimLen": 86
         },
         {
-          "t": 5537,
+          "t": 5552,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -2025,37 +2050,24 @@
     {
       "id": "q08_negation",
       "truth": "Do you plan to raise money this year? No wait, not this year. I mean next year. Are you planning to raise a seed round next year?",
-      "recognized": "do you plan to raise money",
-      "wer": 0.778,
+      "recognized": "",
+      "wer": 1,
       "audioMs": 8035,
       "latency": {
-        "playStart_to_firstInterim": 612,
-        "playEnd_to_lastFinal": 670,
-        "questionFinal_to_firstCandidate": 355,
-        "questionProvisional_to_firstCandidate": 363,
-        "provisionalBeforeEnd": 6218
+        "playStart_to_firstInterim": 619,
+        "playEnd_to_lastFinal": null,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": 375,
+        "provisionalBeforeEnd": 6235
       },
-      "translations": [
-        {
-          "en": "do you plan to raise money",
-          "ja": "〔モック訳〕do you plan to raise money",
-          "state": "final"
-        }
-      ],
+      "translations": [],
       "summaryJa": "質問の内容を確認してください",
-      "questionState": "final",
+      "questionState": "provisional",
       "candidates": [
         {
           "strategy": "知っている範囲で話す",
-          "en": "We are planning this, but it is not final. We plan to use AI for in-game agents and testing. Details are open.",
-          "ja": "（登録情報: AI）",
-          "confirm": false,
-          "basis": "profile"
-        },
-        {
-          "strategy": "補足する",
-          "en": "We plan to launch in December 2026.",
-          "ja": "（登録情報: ローンチ launch）",
+          "en": "The timing of a seed round is not decided.",
+          "ja": "（登録情報: 資金調達 fundraising）",
           "confirm": false,
           "basis": "profile"
         },
@@ -2079,238 +2091,268 @@
       },
       "stt": [
         {
-          "t": 612,
+          "t": 619,
           "ev": "result",
           "finals": 0,
           "interimLen": 3
         },
         {
-          "t": 789,
+          "t": 779,
           "ev": "result",
           "finals": 0,
           "interimLen": 7
         },
         {
-          "t": 938,
+          "t": 969,
           "ev": "result",
           "finals": 0,
           "interimLen": 12
         },
         {
-          "t": 1031,
+          "t": 1042,
           "ev": "result",
           "finals": 0,
           "interimLen": 15
         },
         {
-          "t": 1213,
+          "t": 1204,
           "ev": "result",
           "finals": 0,
           "interimLen": 15
         },
         {
-          "t": 1342,
+          "t": 1337,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1391,
+          "t": 1379,
           "ev": "result",
           "finals": 0,
           "interimLen": 21
         },
         {
-          "t": 1531,
+          "t": 1512,
           "ev": "result",
           "finals": 0,
           "interimLen": 27
         },
         {
-          "t": 1626,
+          "t": 1561,
           "ev": "result",
           "finals": 0,
           "interimLen": 27
         },
         {
-          "t": 1817,
+          "t": 1640,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1800,
           "ev": "result",
           "finals": 0,
           "interimLen": 32
         },
         {
-          "t": 1943,
+          "t": 1931,
           "ev": "result",
           "finals": 0,
           "interimLen": 32
         },
         {
-          "t": 2002,
+          "t": 1979,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2127,
+          "t": 2104,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2413,
+          "t": 2402,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2600,
+          "t": 2582,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2734,
+          "t": 2773,
           "ev": "result",
           "finals": 0,
           "interimLen": 40
         },
         {
-          "t": 2912,
+          "t": 2953,
           "ev": "result",
           "finals": 0,
           "interimLen": 45
         },
         {
-          "t": 3331,
+          "t": 3374,
           "ev": "result",
           "finals": 0,
           "interimLen": 45
         },
         {
-          "t": 3525,
+          "t": 3512,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 3700,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 37
-        },
-        {
-          "t": 3754,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 54
-        },
-        {
-          "t": 3803,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 37
-        },
-        {
-          "t": 4534,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 39
-        },
-        {
-          "t": 4640,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 27
-        },
-        {
-          "t": 4710,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 44
-        },
-        {
-          "t": 4878,
+          "t": 3559,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 5052,
+          "t": 3690,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 3730,
           "ev": "result",
           "finals": 0,
           "interimLen": 54
         },
         {
-          "t": 5304,
+          "t": 3801,
           "ev": "result",
           "finals": 0,
-          "interimLen": 54
+          "interimLen": 37
         },
         {
-          "t": 5464,
+          "t": 3859,
           "ev": "result",
           "finals": 0,
-          "interimLen": 54
+          "interimLen": 59
         },
         {
-          "t": 5661,
+          "t": 4469,
           "ev": "result",
           "finals": 0,
-          "interimLen": 54
+          "interimLen": 59
         },
         {
-          "t": 5735,
+          "t": 4520,
           "ev": "result",
           "finals": 0,
-          "interimLen": 27
+          "interimLen": 61
         },
         {
-          "t": 6088,
+          "t": 4630,
           "ev": "result",
           "finals": 0,
-          "interimLen": 62
+          "interimLen": 66
         },
         {
-          "t": 6163,
+          "t": 4883,
           "ev": "result",
           "finals": 0,
-          "interimLen": 27
+          "interimLen": 71
         },
         {
-          "t": 6335,
+          "t": 5040,
           "ev": "result",
           "finals": 0,
-          "interimLen": 74
+          "interimLen": 76
         },
         {
-          "t": 6626,
+          "t": 5125,
           "ev": "result",
           "finals": 0,
-          "interimLen": 20
+          "interimLen": 76
         },
         {
-          "t": 6981,
+          "t": 5216,
           "ev": "result",
           "finals": 0,
-          "interimLen": 38
+          "interimLen": 76
         },
         {
-          "t": 7050,
+          "t": 5473,
           "ev": "result",
           "finals": 0,
-          "interimLen": 27
+          "interimLen": 76
         },
         {
-          "t": 7589,
+          "t": 5650,
           "ev": "result",
           "finals": 0,
-          "interimLen": 27
+          "interimLen": 76
         },
         {
-          "t": 8705,
+          "t": 5833,
           "ev": "result",
-          "finals": 1,
-          "interimLen": 0
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 5958,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 84
+        },
+        {
+          "t": 6210,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 93
+        },
+        {
+          "t": 6321,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 96
+        },
+        {
+          "t": 6430,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 96
+        },
+        {
+          "t": 6554,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 96
+        },
+        {
+          "t": 6762,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 102
+        },
+        {
+          "t": 6801,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 102
+        },
+        {
+          "t": 6924,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 102
+        },
+        {
+          "t": 6983,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 104
         }
       ]
     },
@@ -2321,9 +2363,9 @@
       "wer": 0,
       "audioMs": 697,
       "latency": {
-        "playStart_to_firstInterim": 897,
-        "playEnd_to_lastFinal": 708,
-        "questionFinal_to_firstCandidate": 355,
+        "playStart_to_firstInterim": 904,
+        "playEnd_to_lastFinal": 702,
+        "questionFinal_to_firstCandidate": 361,
         "questionProvisional_to_firstCandidate": null,
         "provisionalBeforeEnd": null
       },
@@ -2362,13 +2404,13 @@
       },
       "stt": [
         {
-          "t": 897,
+          "t": 904,
           "ev": "result",
           "finals": 0,
           "interimLen": 4
         },
         {
-          "t": 1405,
+          "t": 1399,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -2380,11 +2422,11 @@
       "truth": "That sounds great. Thanks for walking us through the demo.",
       "recognized": "that sounds great thanks for walking us through the demo",
       "wer": 0,
-      "audioMs": 3228,
+      "audioMs": 3229,
       "latency": {
-        "playStart_to_firstInterim": 684,
-        "playEnd_to_lastFinal": 561,
-        "questionFinal_to_firstCandidate": 353,
+        "playStart_to_firstInterim": 707,
+        "playEnd_to_lastFinal": 574,
+        "questionFinal_to_firstCandidate": 354,
         "questionProvisional_to_firstCandidate": null,
         "provisionalBeforeEnd": null
       },
@@ -2423,121 +2465,115 @@
       },
       "stt": [
         {
-          "t": 684,
+          "t": 707,
           "ev": "result",
           "finals": 0,
           "interimLen": 5
         },
         {
-          "t": 797,
+          "t": 802,
           "ev": "result",
           "finals": 0,
           "interimLen": 12
         },
         {
-          "t": 978,
+          "t": 992,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1279,
+          "t": 1296,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1392,
+          "t": 1406,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1576,
+          "t": 1590,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1757,
+          "t": 1719,
           "ev": "result",
           "finals": 0,
           "interimLen": 25
         },
         {
-          "t": 1936,
+          "t": 1902,
           "ev": "result",
           "finals": 0,
           "interimLen": 29
         },
         {
-          "t": 2230,
+          "t": 2243,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2353,
+          "t": 2329,
           "ev": "result",
           "finals": 0,
           "interimLen": 37
         },
         {
-          "t": 2486,
+          "t": 2503,
           "ev": "result",
           "finals": 0,
           "interimLen": 40
         },
         {
-          "t": 2545,
-          "ev": "result",
-          "finals": 0,
-          "interimLen": 40
-        },
-        {
-          "t": 2653,
+          "t": 2668,
           "ev": "result",
           "finals": 0,
           "interimLen": 48
         },
         {
-          "t": 2777,
+          "t": 2793,
           "ev": "result",
           "finals": 0,
           "interimLen": 52
         },
         {
-          "t": 2829,
+          "t": 2842,
           "ev": "result",
           "finals": 0,
           "interimLen": 52
         },
         {
-          "t": 3092,
+          "t": 3110,
           "ev": "result",
           "finals": 0,
           "interimLen": 56
         },
         {
-          "t": 3196,
+          "t": 3171,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 3251,
+          "t": 3255,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 3368,
+          "t": 3384,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 3789,
+          "t": 3803,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -2551,11 +2587,11 @@
       "wer": 0.476,
       "audioMs": 4739,
       "latency": {
-        "playStart_to_firstInterim": 399,
-        "playEnd_to_lastFinal": 576,
-        "questionFinal_to_firstCandidate": 355,
-        "questionProvisional_to_firstCandidate": 353,
-        "provisionalBeforeEnd": 3058
+        "playStart_to_firstInterim": 429,
+        "playEnd_to_lastFinal": 570,
+        "questionFinal_to_firstCandidate": 356,
+        "questionProvisional_to_firstCandidate": 358,
+        "provisionalBeforeEnd": 3066
       },
       "translations": [
         {
@@ -2592,145 +2628,151 @@
       },
       "stt": [
         {
-          "t": 399,
+          "t": 429,
           "ev": "result",
           "finals": 0,
           "interimLen": 6
         },
         {
-          "t": 485,
+          "t": 474,
           "ev": "result",
           "finals": 0,
           "interimLen": 10
         },
         {
-          "t": 640,
+          "t": 653,
           "ev": "result",
           "finals": 0,
           "interimLen": 15
         },
         {
-          "t": 948,
+          "t": 962,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 999,
+          "t": 1014,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1070,
+          "t": 1067,
           "ev": "result",
           "finals": 0,
           "interimLen": 18
         },
         {
-          "t": 1190,
+          "t": 1202,
           "ev": "result",
           "finals": 0,
           "interimLen": 23
         },
         {
-          "t": 1244,
+          "t": 1253,
           "ev": "result",
           "finals": 0,
           "interimLen": 23
         },
         {
-          "t": 1315,
+          "t": 1304,
           "ev": "result",
           "finals": 0,
           "interimLen": 29
         },
         {
-          "t": 1551,
+          "t": 1564,
           "ev": "result",
           "finals": 0,
           "interimLen": 29
         },
         {
-          "t": 1681,
+          "t": 1673,
           "ev": "result",
           "finals": 0,
           "interimLen": 33
         },
         {
-          "t": 1790,
+          "t": 1736,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1805,
           "ev": "result",
           "finals": 0,
           "interimLen": 33
         },
         {
-          "t": 1920,
+          "t": 1904,
           "ev": "result",
           "finals": 0,
           "interimLen": 33
         },
         {
-          "t": 1972,
+          "t": 1987,
           "ev": "result",
           "finals": 0,
           "interimLen": 38
         },
         {
-          "t": 2165,
+          "t": 2180,
           "ev": "result",
           "finals": 0,
           "interimLen": 41
         },
         {
-          "t": 2233,
+          "t": 2250,
           "ev": "result",
           "finals": 0,
           "interimLen": 45
         },
         {
-          "t": 2276,
+          "t": 2407,
           "ev": "result",
           "finals": 0,
           "interimLen": 45
         },
         {
-          "t": 2442,
+          "t": 2455,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 2572,
+          "t": 2589,
           "ev": "result",
           "finals": 0,
           "interimLen": 49
         },
         {
-          "t": 2751,
+          "t": 2766,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 2815,
+          "t": 2829,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 3036,
+          "t": 3047,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 3360,
+          "t": 3358,
           "ev": "result",
           "finals": 0,
           "interimLen": 57
         },
         {
-          "t": 5315,
+          "t": 5309,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
@@ -2740,42 +2782,37 @@
     {
       "id": "q12_gaps",
       "truth": "Why? Quick one. Which chain are you on, and why did you choose it over the alternatives?",
-      "recognized": "why did you choose",
-      "wer": 0.765,
-      "audioMs": 12423,
+      "recognized": "why",
+      "wer": 0.941,
+      "audioMs": 12424,
       "latency": {
-        "playStart_to_firstInterim": 4742,
-        "playEnd_to_lastFinal": 630,
-        "questionFinal_to_firstCandidate": 353,
-        "questionProvisional_to_firstCandidate": null,
-        "provisionalBeforeEnd": null
+        "playStart_to_firstInterim": 4749,
+        "playEnd_to_lastFinal": -7046,
+        "questionFinal_to_firstCandidate": 355,
+        "questionProvisional_to_firstCandidate": 354,
+        "provisionalBeforeEnd": 1992
       },
       "translations": [
         {
           "en": "why",
           "ja": "〔モック訳〕why",
           "state": "final"
-        },
-        {
-          "en": "did you choose",
-          "ja": "〔モック訳〕did you choose",
-          "state": "final"
         }
       ],
-      "summaryJa": "質問の内容を確認してください",
-      "questionState": "final",
+      "summaryJa": "理由を聞かれています",
+      "questionState": "provisional",
       "candidates": [
         {
-          "strategy": "聞き返す",
-          "en": "Sorry, could you say that again more slowly?",
-          "ja": "すみません、もう一度ゆっくり言ってもらえますか？",
+          "strategy": "要点を答える",
+          "en": "Zentoria runs on Solana.",
+          "ja": "（登録情報: チェーン chain）",
           "confirm": false,
-          "basis": "none"
+          "basis": "profile"
         },
         {
-          "strategy": "保留する",
-          "en": "I don't have that information right now. I will check and follow up.",
-          "ja": "今は情報がありません。確認して追って連絡します。",
+          "strategy": "聞き返す",
+          "en": "Do you mean the current version or the next one?",
+          "ja": "今のバージョンのことですか、次のことですか？",
           "confirm": false,
           "basis": "none"
         }
@@ -2790,130 +2827,166 @@
       },
       "stt": [
         {
-          "t": 4742,
+          "t": 4749,
           "ev": "result",
           "finals": 0,
           "interimLen": 4
         },
         {
-          "t": 5398,
+          "t": 5378,
           "ev": "result",
           "finals": 1,
           "interimLen": 0
         },
         {
-          "t": 9230,
+          "t": 9241,
           "ev": "result",
           "finals": 0,
           "interimLen": 6
         },
         {
-          "t": 9406,
+          "t": 9410,
           "ev": "result",
           "finals": 0,
           "interimLen": 10
         },
         {
-          "t": 9824,
+          "t": 9834,
           "ev": "result",
           "finals": 0,
           "interimLen": 16
         },
         {
-          "t": 10015,
+          "t": 10012,
           "ev": "result",
           "finals": 0,
           "interimLen": 16
         },
         {
-          "t": 11159,
+          "t": 10081,
           "ev": "result",
           "finals": 0,
-          "interimLen": 4
+          "interimLen": 22
         },
         {
-          "t": 11226,
+          "t": 10181,
           "ev": "result",
           "finals": 0,
-          "interimLen": 8
+          "interimLen": 26
         },
         {
-          "t": 11416,
+          "t": 10257,
           "ev": "result",
           "finals": 0,
-          "interimLen": 15
+          "interimLen": 30
         },
         {
-          "t": 11573,
+          "t": 10432,
           "ev": "result",
           "finals": 0,
-          "interimLen": 18
+          "interimLen": 33
         },
         {
-          "t": 11689,
+          "t": 10775,
           "ev": "result",
           "finals": 0,
-          "interimLen": 23
+          "interimLen": 37
         },
         {
-          "t": 11737,
+          "t": 11034,
           "ev": "result",
           "finals": 0,
-          "interimLen": 23
+          "interimLen": 41
         },
         {
-          "t": 11836,
+          "t": 11149,
           "ev": "result",
           "finals": 0,
-          "interimLen": 23
+          "interimLen": 45
         },
         {
-          "t": 11897,
+          "t": 11202,
           "ev": "result",
           "finals": 0,
-          "interimLen": 27
+          "interimLen": 49
         },
         {
-          "t": 12049,
+          "t": 11400,
           "ev": "result",
           "finals": 0,
-          "interimLen": 27
+          "interimLen": 56
         },
         {
-          "t": 12101,
+          "t": 11561,
           "ev": "result",
           "finals": 0,
-          "interimLen": 34
+          "interimLen": 59
         },
         {
-          "t": 12186,
+          "t": 11640,
           "ev": "result",
           "finals": 0,
-          "interimLen": 34
+          "interimLen": 59
         },
         {
-          "t": 12286,
+          "t": 11692,
           "ev": "result",
           "finals": 0,
-          "interimLen": 34
+          "interimLen": 64
         },
         {
-          "t": 12423,
+          "t": 11750,
           "ev": "result",
           "finals": 0,
-          "interimLen": 40
+          "interimLen": 64
         },
         {
-          "t": 12467,
+          "t": 11805,
           "ev": "result",
           "finals": 0,
-          "interimLen": 40
+          "interimLen": 64
         },
         {
-          "t": 13053,
+          "t": 11885,
           "ev": "result",
-          "finals": 1,
-          "interimLen": 0
+          "finals": 0,
+          "interimLen": 68
+        },
+        {
+          "t": 11980,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 68
+        },
+        {
+          "t": 12103,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 12163,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 12291,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 12400,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 81
+        },
+        {
+          "t": 12468,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 81
         }
       ]
     }
@@ -2982,7 +3055,7 @@
         "items": [
           "(mock) 来月のテスト版の結果を見てから決めたいと伝えたい"
         ],
-        "ms": 354
+        "ms": 353
       }
     },
     {
@@ -3020,7 +3093,7 @@
       "name": "固有名詞・金額・日付の聞き取り (誤認識は表示で確認できる)",
       "pass": true,
       "detail": {
-        "recognized": "and is the budget around 15,000 by March 3rd",
+        "recognized": "and is the budget around $15,000 by March 3rd",
         "keywordsFound": [
           {
             "k": "zentoria",
@@ -3109,8 +3182,8 @@
       "name": "質問として検知し候補を生成",
       "pass": true,
       "detail": {
-        "state": "final",
-        "items": 3,
+        "state": "provisional",
+        "items": 2,
         "error": null
       }
     },
@@ -3122,7 +3195,7 @@
         "issues": [
           "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
         ],
-        "questionText": "do you plan to raise money"
+        "questionText": "do you plan to raise money this year no wait not this year I mean next year are you planning to raise a"
       }
     },
     {
@@ -3159,7 +3232,7 @@
       "name": "質問として検知し候補を生成",
       "pass": true,
       "detail": {
-        "state": "final",
+        "state": "provisional",
         "items": 2,
         "error": null
       }
@@ -3198,72 +3271,72 @@
     "capture_to_first_interim": {
       "label": "音声取得→認識 (発話開始→最初の途中結果)",
       "n": 12,
-      "p50": 493,
-      "p95": 758,
-      "min": 217,
-      "max": 758
+      "p50": 488,
+      "p95": 779,
+      "min": 284,
+      "max": 779
     },
     "question_provisional_to_first_candidate": {
       "label": "質問(暫定)→最初の候補",
-      "n": 13,
-      "p50": 354,
-      "p95": 364,
+      "n": 18,
+      "p50": 355,
+      "p95": 375,
       "min": 353,
-      "max": 364
+      "max": 375
     },
     "partial_to_translation": {
       "label": "認識→翻訳 (途中訳)",
-      "n": 28,
-      "p50": 472,
+      "n": 30,
+      "p50": 471,
       "p95": 473,
       "min": 471,
-      "max": 474
+      "max": 475
     },
     "reply_total": {
       "label": "候補生成の完了まで",
-      "n": 24,
-      "p50": 504,
-      "p95": 657,
-      "min": 503,
-      "max": 657
+      "n": 27,
+      "p50": 509,
+      "p95": 662,
+      "min": 504,
+      "max": 663
     },
     "speech_end_to_final": {
       "label": "音声取得→認識 (発話終了→確定)",
-      "n": 12,
-      "p50": 749,
-      "p95": 852,
-      "min": 671,
-      "max": 852
+      "n": 10,
+      "p50": 769,
+      "p95": 873,
+      "min": 709,
+      "max": 873
     },
     "final_to_translation": {
       "label": "認識→翻訳 (確定訳)",
-      "n": 10,
-      "p50": 121,
-      "p95": 127,
+      "n": 9,
+      "p50": 120,
+      "p95": 126,
       "min": 0,
-      "max": 127
+      "max": 126
     },
     "question_final_to_first_candidate": {
       "label": "質問の確定→最初の候補",
-      "n": 11,
-      "p50": 353,
-      "p95": 355,
-      "min": 352,
-      "max": 355
+      "n": 9,
+      "p50": 356,
+      "p95": 364,
+      "min": 354,
+      "max": 364
     },
     "refine_to_result": {
       "label": "言い直し→結果",
       "n": 1,
-      "p50": 354,
-      "p95": 354,
-      "min": 354,
-      "max": 354
+      "p50": 353,
+      "p95": 353,
+      "min": 353,
+      "max": 353
     }
   },
   "usage": {
-    "requests": 25,
-    "inputTokens": 30000,
-    "outputTokens": 4000,
+    "requests": 28,
+    "inputTokens": 33600,
+    "outputTokens": 4480,
     "costUsd": 0,
     "relaySpentUsd": 0
   },
@@ -3279,31 +3352,31 @@
   },
   "issues": [
     {
-      "ts": 1792775091905.5999,
+      "ts": 1792792251109.5,
       "level": "info",
       "code": "corrected",
       "message": "言い直し・訂正を検知しました。候補を作り直します。"
     },
     {
-      "ts": 1792775151224,
+      "ts": 1792792310521.3,
       "level": "error",
       "code": "reply-unreachable",
       "message": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
     },
     {
-      "ts": 1792775153979.5,
+      "ts": 1792792313284.5,
       "level": "error",
       "code": "reply-unreachable",
       "message": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
     },
     {
-      "ts": 1792775154917.4,
+      "ts": 1792792314243.8,
       "level": "error",
       "code": "reply-unreachable",
       "message": "ローカル中継に接続できません (http://127.0.0.1:47333)。relay を起動してください。"
     },
     {
-      "ts": 1792775161160.0999,
+      "ts": 1792792320601.9,
       "level": "info",
       "code": "corrected",
       "message": "言い直し・訂正を検知しました。候補を作り直します。"
@@ -3313,24 +3386,24 @@
     "playStart_to_firstInterim": {
       "n": 11,
       "p50": 647,
-      "p95": 4742
+      "p95": 4749
     },
     "playEnd_to_lastFinal": {
-      "n": 11,
-      "p50": 592,
-      "p95": 708
+      "n": 10,
+      "p50": 570,
+      "p95": 702
     },
     "questionFinal_to_firstCandidate": {
-      "n": 10,
-      "p50": 353,
-      "p95": 355
-    },
-    "questionProvisional_to_firstCandidate": {
-      "n": 6,
-      "p50": 354,
+      "n": 9,
+      "p50": 356,
       "p95": 364
     },
-    "werMean": 0.36
+    "questionProvisional_to_firstCandidate": {
+      "n": 7,
+      "p50": 358,
+      "p95": 375
+    },
+    "werMean": 0.346
   },
-  "finishedAt": "2026-10-23T17:06:47.510Z"
+  "finishedAt": "2026-10-23T21:52:46.294Z"
 }

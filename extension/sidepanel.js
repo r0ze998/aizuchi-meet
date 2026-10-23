@@ -74,6 +74,9 @@ $('btnCopyMetrics').addEventListener('click', async () => {
 async function beginStart() {
   notice('');
   warmTranslator();
+  if (settings.replyProvider === 'direct') {
+    chrome.storage.local.get(STORAGE_KEYS.anthropicKey).then(({ anthropicKey }) => { if (!anthropicKey) notice('返答候補を出すには、設定（⚙）の「Anthropic API」でキーを入れてください。訳だけならこのまま使えます。'); });
+  }
   if (!invokedTab?.tabId) { notice('Meet タブを開いた状態で、ツールバーの Aizuchi アイコン（または ⌘⇧Y）を押してください。押したタブの音声だけを取得します。'); return; }
   const { consentAcked } = await chrome.storage.session.get('consentAcked');
   if (!consentAcked) {
@@ -209,7 +212,8 @@ function renderMetrics(s) {
   const rows = Object.entries(m).filter(([, v]) => v.n > 0);
   $('metrics').innerHTML = rows.length ? '<tr><th>区間</th><th>n</th><th>p50</th><th>p95</th></tr>' + rows.map(([k, v]) => `<tr><td>${esc(v.label || k)}</td><td class="num">${v.n}</td><td class="num">${v.p50} ms</td><td class="num">${v.p95} ms</td></tr>`).join('') : '<tr><td class="muted">まだ計測がありません</td></tr>';
   const u = s?.usage;
-  $('usage').textContent = u?.requests ? `生成リクエスト ${u.requests} 回 / 推定費用 $${(u.costUsd || 0).toFixed(4)}${Number.isFinite(u.relaySpentUsd) ? `（中継の累計 $${u.relaySpentUsd.toFixed(4)}）` : ''}` : '';
+  const sp = s?.spend;
+  $('usage').textContent = u?.requests || sp?.requests ? `生成 ${u?.requests || 0} 回 / この会議の推定費用 $${(sp && s?.settings?.replyProvider === 'direct' ? sp.spentUsd : (u?.costUsd || 0)).toFixed(4)}${sp && s?.settings?.replyProvider === 'direct' ? `（上限 $${sp.maxSessionUsd.toFixed(2)}）` : ''}` : '';
 }
 
 document.addEventListener('click', (e) => {

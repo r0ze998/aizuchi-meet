@@ -178,3 +178,12 @@ test('mock: conflicting profile facts produce a confirm candidate, never one sid
   expect(out.some((c) => /adopted and working|not used/.test(c.en))).toBe(false);
   expect(out.some((c) => /Do not promise/.test(c.en))).toBe(false);
 });
+
+test('upstream overload is shown as a short sentence, never raw JSON', async () => {
+  const replier = { info: () => ({}), async generate(_, { onError }) { onError({ code: 'upstream-error', status: 529, message: '529 {"type":"error","error":{"type":"overloaded_error"}}' }); } };
+  const { p } = make({ replier });
+  p.feedStt({ finals: ['Which chain are you on?'], ts: 1000 });
+  await sleep(30);
+  const set = current(p);
+  expect(set.error).toContain('混雑'); expect(set.error).not.toContain('{');
+});

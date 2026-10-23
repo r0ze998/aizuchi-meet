@@ -8,9 +8,15 @@ import { startFixtures } from './fixtures-server.mjs';
 import { connect, swSession, offscreenSession, pageSession, setSettings, setProfile, setToken, activeTabId, setInvokedTab, panelStart, panelClick, offState, waitStatus, extUrl } from './common.mjs';
 import { waitFor } from './cdp.mjs';
 import { percentile } from '../../extension/lib/metrics.js';
+import { startFakeAnthropic, FAKE_VALID_KEY } from './fake-anthropic.mjs';
+
+// E2E_REPLY=direct → the extension talks straight to an Anthropic-shaped API (a local fake; no cost).
+const DIRECT = process.env.E2E_REPLY === 'direct';
+const fakeApi = DIRECT ? startFakeAnthropic({ firstTokenMs: 400, chunkMs: 15 }) : null;
+const SUFFIX = DIRECT ? '-direct' : '';
 
 fs.mkdirSync(OUT_DIR, { recursive: true }); fs.mkdirSync(SHOT_DIR, { recursive: true });
-const LOG = path.join(OUT_DIR, 'e2e-speech.log'); fs.writeFileSync(LOG, '');
+const LOG = path.join(OUT_DIR, `e2e-speech${SUFFIX}.log`); fs.writeFileSync(LOG, '');
 const _log = console.log.bind(console); console.log = (...a) => { const line = a.map((x) => (typeof x === 'string' ? x : JSON.stringify(x))).join(' '); fs.appendFileSync(LOG, line + '\n'); _log(...a); };
 const truth = JSON.parse(fs.readFileSync(path.join(ROOT, 'test', 'fixtures', 'audio', 'transcripts.json'), 'utf8'));
 const profile = JSON.parse(fs.readFileSync(path.join(ROOT, 'test', 'fixtures', 'profile.sample.json'), 'utf8'));
@@ -47,7 +53,9 @@ async function waitRelay(up, timeout = 8000) {
   return false;
 }
 
-const out = { startedAt: new Date().toISOString(), extensionId: EXT_ID, providers: null, scenarios: [], checks: [], features: null };
+const shot = (n) => path.join(SHOT_DIR, `${DIRECT ? 'direct-' : ''}${n}.png`);
+const replyCfg = () => (DIRECT ? { replyProvider: 'direct', replyModel: 'claude-opus-5-5', anthropicBaseUrl: fakeApi.url } : { replyProvider: 'relay', relayUrl: `http://127.0.0.1:${RELAY_PORT}` });
+const out = { mode: DIRECT ? 'direct (fake Anthropic API)' : 'relay (mock upstream)', startedAt: new Date().toISOString(), extensionId: EXT_ID, providers: null, scenarios: [], checks: [], features: null };
 const check = (id, name, pass, detail) => { out.checks.push({ id, name, pass: !!pass, detail }); console.log(`${pass ? 'PASS' : 'FAIL'} ${id} ${name} ${detail ? JSON.stringify(detail).slice(0, 240) : ''}`); };
 
 let relay = startRelay(); await waitRelay(true);
@@ -61,6 +69,7 @@ try {
   await cdp.activate(tabA.targetId);
   const sw = await swSession(cdp);
   await setProfile(cdp, sw, profile); await setToken(cdp, sw, RELAY_TOKEN);
+  if (DIRECT) await cdp.evaluate(sw, `chrome.storage.local.set({ anthropicKey: ${JSON.stringify(FAKE_VALID_KEY)}, settings: ${JSON.stringify({ ...replyCfg() })} }).then(() => true)`);
   // Prepare on-device models from the options page (user activation): translator en→ja, and on-device speech if offered.
   const opt = await pageSession(cdp, extUrl('options.html'), { width: 960, height: 1400 });
   await Bun.sleep(800);
@@ -81,17 +90,26 @@ try {
   const translateProvider = trAvail === 'available' ? 'chrome' : 'mock';
   out.features = { translatorAvailability: { before: trAvail0, after: trAvail }, onDeviceSpeech: sttLocal, sttMode: useLocalStt ? 'on-device' : 'google-server', translateProvider };
   console.log('features', out.features);
-  await setSettings(cdp, sw, { sttProvider: 'webspeech', sttProcessLocally: useLocalStt, translateProvider, replyProvider: 'relay', relayUrl: `http://127.0.0.1:${RELAY_PORT}`, provisionalMinWords: 5 });
+  await setSettings(cdp, sw, { sttProvider: 'webspeech', sttProcessLocally: useLocalStt, translateProvider, ...replyCfg(), provisionalMinWords: 5 });
   await Bun.sleep(300);
   await cdp.evaluate(opt.sid, `document.getElementById('btnSample').click(); true`); await Bun.sleep(300);
-  await cdp.screenshot(opt.sid, path.join(SHOT_DIR, 'options-profile-sample.png'), { fullPage: true });
+  if (DIRECT) {
+    await cdp.evaluate(opt.sid, `document.getElementById('btnApiCheck').click(); true`);
+    const apiState = await waitFor(() => cdp.evaluate(opt.sid, `document.getElementById('apiState').textContent`), (t) => /接続OK|失敗/.test(t), { timeout: 15000, label: 'api check' });
+    const keyField = await cdp.evaluate(opt.sid, `document.getElementById('api_key').value`);
+    const pageHasKey = await cdp.evaluate(opt.sid, `document.body.innerText.includes(${JSON.stringify(FAKE_VALID_KEY)})`);
+    check('direct/options-check', '設定画面の「接続を確認」が無料のモデル API で成功し、キー本体は画面に出ない', /接続OK/.test(apiState) && keyField === '' && !pageHasKey, { apiState, keyFieldEmpty: keyField === '', pageHasKey });
+    await cdp.evaluate(opt.sid, `document.getElementById('secApi').scrollIntoView(); true`); await Bun.sleep(300);
+    await cdp.screenshot(opt.sid, path.join(SHOT_DIR, 'options-api.png'));
+  }
+  await cdp.screenshot(opt.sid, shot('options-profile-sample'), { fullPage: true });
   await cdp.activate(tabA.targetId); await Bun.sleep(400);
   const aId = await activeTabId(cdp, sw);
   await setInvokedTab(cdp, sw, aId, 'Speech player (capture target)');
   const panel = await pageSession(cdp, extUrl('sidepanel.html'), { width: 420, height: 960 });
   await Bun.sleep(600);
   await panelClick(cdp, panel.sid, '#btnStart'); await Bun.sleep(400);
-  await cdp.screenshot(panel.sid, path.join(SHOT_DIR, 'panel-consent.png'));
+  await cdp.screenshot(panel.sid, shot('panel-consent'));
   await panelStart(cdp, panel.sid);
   const off = await offscreenSession(cdp, 15000);
   await waitStatus(cdp, off, 'capturing', 15000);
@@ -103,11 +121,11 @@ try {
   let pinnedEn = null, traceCursor = 0;
   const onlyIds = (process.env.E2E_ONLY || '').split(',').map((x) => x.trim()).filter(Boolean);
   for (const sc of scenarios.filter((x) => !onlyIds.length || onlyIds.includes(x.id))) {
-    if (sc.relayDown) { relay.kill(); await waitRelay(false); console.log('relay stopped for', sc.id); }
+    if (sc.relayDown) { if (DIRECT) { fakeApi.failNext(529, 8); console.log('fake API returns 529 for', sc.id); } else { relay.kill(); await waitRelay(false); console.log('relay stopped for', sc.id); } }
     const before = await offState(cdp, off);
     const t0 = Date.now();
     const playP = cdp.evaluate(player, `playFile('${fx.url}/audio/${sc.id}.wav')`, { timeout: 120000 });
-    if (sc.shotDuring) { await Bun.sleep(3500); await cdp.screenshot(panel.sid, path.join(SHOT_DIR, `${sc.shotDuring}.png`)); }
+    if (sc.shotDuring) { await Bun.sleep(3500); await cdp.screenshot(panel.sid, shot(sc.shotDuring)); }
     const played = await playP;
     // wait for the pipeline to settle: no new trace events for 2.5 s (max 12 s)
     let lastLen = -1, stable = 0;
@@ -140,15 +158,15 @@ try {
     };
     out.scenarios.push(rec);
     console.log(`\n[${sc.id}] WER=${rec.wer} lat=${JSON.stringify(rec.latency)}\n  recognized: ${recognized}\n  summary: ${rec.summaryJa} (${rec.questionState}/${rec.setStatus})\n  candidates: ${rec.candidates.map((c) => `[${c.strategy}${c.confirm ? '⚠' : ''}] ${c.en}`).join(' | ')}`);
-    if (sc.shot) { await Bun.sleep(300); await cdp.screenshot(panel.sid, path.join(SHOT_DIR, `${sc.shot}.png`)); }
+    if (sc.shot) { await Bun.sleep(300); await cdp.screenshot(panel.sid, shot(sc.shot)); }
     if (sc.expectQuestion) check(`${sc.id}/q`, '質問として検知し候補を生成', !!cur && (cur.items.length > 0 || sc.relayDown), { state: cur?.state, items: cur?.items.length, error: cur?.error });
     else check(`${sc.id}/stmt`, '説明文は質問扱いにならない', !cur || cur.kind === 'statement' || cur.relation !== 'current', { kind: cur?.kind, summary: rec.summaryJa });
     if (sc.expectConfirm) check(`${sc.id}/confirm`, '費用・契約の質問では承諾せず確認・保留の候補だけ', !!cur && cur.items.length > 0 && cur.items.every((i) => i.confirm), { items: rec.candidates });
     if (sc.expectCorrection) check(`${sc.id}/corr`, '言い直し・否定を検知して候補を作り直す', after.issues.some((i) => i.code === 'corrected' && i.ts >= t0) || (cur && /next year|use AI/i.test(cur.questionText)), { issues: rec.issues, questionText: cur?.questionText });
     if (sc.keywords) check(`${sc.id}/names`, '固有名詞・金額・日付の聞き取り (誤認識は表示で確認できる)', true, { recognized, keywordsFound: sc.keywords.map((k) => ({ k, found: new RegExp(k, 'i').test(recognized) })) });
     if (sc.relayDown) {
-      check(`${sc.id}/relay-down`, '中継停止時はエラーが表示され黙って進まない', after.issues.some((i) => /reply-unreachable|reply-/.test(i.code) && i.ts >= t0) && cur?.status === 'error', { issues: rec.issues, setError: cur?.error });
-      relay = startRelay(); await waitRelay(true); console.log('relay restarted');
+      check(`${sc.id}/relay-down`, DIRECT ? 'API 障害（529 過負荷）時はエラーが表示され黙って進まない' : '中継停止時はエラーが表示され黙って進まない', after.issues.some((i) => /reply-unreachable|reply-/.test(i.code) && i.ts >= t0) && cur?.status === 'error', { issues: rec.issues, setError: cur?.error });
+      if (DIRECT) fakeApi.failNext(0, 0); else { relay = startRelay(); await waitRelay(true); console.log('relay restarted'); }
     }
     if (sc.id === 'q01_status' && cur?.items[0] && !onlyIds.length) {
       await cdp.evaluate(panel.sid, `document.querySelector('#cands button[data-act="pin"]').click(); true`); await Bun.sleep(300);
@@ -162,8 +180,17 @@ try {
       await cdp.evaluate(panel.sid, `(() => { const i = document.getElementById('refineInput'); i.value = '来月のテスト版の結果を見てから決めたいと伝えたい'; document.getElementById('refineForm').requestSubmit(); return true; })()`);
       const st2 = await waitFor(() => offState(cdp, off), (s) => s.refine.items.length > 0 || s.refine.error, { timeout: 15000, label: 'refine' });
       check('refine', '「こう言いたい」で英語の言い直しが出る', st2.refine.items.length > 0, { items: st2.refine.items.map((i) => i.en), ms: st2.metrics.refine_to_result?.p50 });
-      await cdp.screenshot(panel.sid, path.join(SHOT_DIR, 'e2e-02b-pinned-refine.png'));
+      await cdp.screenshot(panel.sid, shot('e2e-02b-pinned-refine'));
     }
+  }
+  if (DIRECT) {
+    const st = await offState(cdp, off);
+    const panelText = await cdp.evaluate(panel.sid, 'document.body.innerText');
+    const msgs = fakeApi.log.filter((r) => r.path === '/v1/messages');
+    check('direct/requests', '拡張から直接ストリーミング接続（公式 SDK・ブラウザ用ヘッダー・プロンプトキャッシュ・拒否時フォールバック）', msgs.length > 0 && msgs.every((r) => r.directHeader === 'true' && r.keyOk && r.stream && r.cache && r.fallbacks === 'default'), { requests: msgs.length, sample: msgs[0] });
+    check('direct/key-hidden', 'API キーは取得処理の状態にもパネル表示にも出ない', !JSON.stringify(st).includes(FAKE_VALID_KEY) && !panelText.includes(FAKE_VALID_KEY), {});
+    check('direct/spend', '費用を推定し、上限つきでパネルに表示', st.spend?.spentUsd > 0 && st.spend?.maxSessionUsd > 0 && /上限 \$/.test(await cdp.evaluate(panel.sid, `document.getElementById('usage').textContent`)), { ...st.spend, panelUsage: await cdp.evaluate(panel.sid, `document.getElementById('usage').textContent`) });
+    out.fakeApi = { requests: msgs.length, models: [...new Set(msgs.map((r) => r.model))], simulatedFailures: fakeApi.log.filter((r) => r.path === '/v1/messages').length - msgs.length };
   }
   const fin = await offState(cdp, off);
   out.metrics = fin.metrics; out.usage = fin.usage; out.audio = fin.audio; out.issues = fin.issues;
@@ -176,12 +203,12 @@ try {
     werMean: +(out.scenarios.reduce((a, s) => a + s.wer, 0) / out.scenarios.length).toFixed(3),
   };
   await panelClick(cdp, panel.sid, '#btnStop'); await waitStatus(cdp, off, 'stopped', 8000).catch(() => {});
-  await Bun.sleep(400); await cdp.screenshot(panel.sid, path.join(SHOT_DIR, 'e2e-99-stopped.png'));
+  await Bun.sleep(400); await cdp.screenshot(panel.sid, shot('e2e-99-stopped'));
 } catch (e) { console.error('E2E ERROR', e); out.error = String(e.stack || e); }
-finally { cdp.close(); await chrome.kill(); fx.stop(); try { relay.kill(); } catch { /* ignore */ } }
+finally { cdp.close(); await chrome.kill(); fx.stop(); try { relay.kill(); } catch { /* ignore */ } try { fakeApi?.stop(); } catch { /* ignore */ } }
 out.finishedAt = new Date().toISOString();
-fs.writeFileSync(path.join(OUT_DIR, 'e2e-speech.json'), JSON.stringify(out, null, 2));
+fs.writeFileSync(path.join(OUT_DIR, `e2e-speech${SUFFIX}.json`), JSON.stringify(out, null, 2));
 console.log('\nSUMMARY', JSON.stringify(out.summary, null, 1));
 console.log('metrics', JSON.stringify(out.metrics));
-console.log(`${out.checks.filter((c) => c.pass).length}/${out.checks.length} checks passed → test/out/e2e-speech.json`);
+console.log(`${out.checks.filter((c) => c.pass).length}/${out.checks.length} checks passed → test/out/e2e-speech${SUFFIX}.json`);
 process.exit(out.error || out.checks.some((c) => !c.pass) ? 1 : 0);

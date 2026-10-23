@@ -1,0 +1,3359 @@
+{
+  "mode": "direct (fake Anthropic API)",
+  "startedAt": "2026-10-23T21:47:34.915Z",
+  "extensionId": "hkdniejckkeajnajkpdhgamjolbbcpch",
+  "providers": {
+    "stt": {
+      "name": "webspeech",
+      "label": "Chrome 音声認識 (Google サーバー)",
+      "external": true,
+      "supported": true,
+      "state": "listening"
+    },
+    "translate": {
+      "name": "mock",
+      "label": "翻訳: モック (送信なし)",
+      "external": false,
+      "supported": true,
+      "state": "ready"
+    },
+    "reply": {
+      "name": "direct",
+      "label": "候補: Anthropic に直接接続（claude-opus-5-5）",
+      "external": true,
+      "supported": true,
+      "state": "idle"
+    },
+    "states": {
+      "webspeech": {
+        "provider": "webspeech",
+        "label": "peer",
+        "state": "listening"
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "id": "q01_status",
+      "truth": "So, what's the current status of your game project, and when do you plan to launch it?",
+      "recognized": "so what's the current status of your game project and when do you plan to launch it",
+      "wer": 0,
+      "audioMs": 5179,
+      "latency": {
+        "playStart_to_firstInterim": 932,
+        "playEnd_to_lastFinal": 622,
+        "questionFinal_to_firstCandidate": 532,
+        "questionProvisional_to_firstCandidate": 543,
+        "provisionalBeforeEnd": 2680
+      },
+      "translations": [
+        {
+          "en": "so what's the current status of your game project and when do you plan to launch it",
+          "ja": "〔モック訳〕so what's the current status of your game project and when do you plan to launch it",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）質問: so what's the current st",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": -1220,
+          "ev": "start"
+        },
+        {
+          "t": 931,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 2
+        },
+        {
+          "t": 1222,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 9
+        },
+        {
+          "t": 1417,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 1539,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 1720,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1820,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 2011,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 2078,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 2243,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 31
+        },
+        {
+          "t": 2323,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 31
+        },
+        {
+          "t": 2498,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 36
+        },
+        {
+          "t": 2657,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 36
+        },
+        {
+          "t": 2789,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 2845,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 2971,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3100,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3382,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3569,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3630,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 53
+        },
+        {
+          "t": 3938,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 58
+        },
+        {
+          "t": 4048,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 61
+        },
+        {
+          "t": 4171,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4231,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4461,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4538,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4638,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 4781,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 5017,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 5059,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 5139,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 83
+        },
+        {
+          "t": 5242,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 83
+        },
+        {
+          "t": 5602,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 83
+        },
+        {
+          "t": 5801,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q02_restate",
+      "truth": "How many users do you have right now? Actually, sorry, forget that. What I really wanted to ask is, how are you planning to use AI inside the game?",
+      "recognized": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game",
+      "wer": 0,
+      "audioMs": 9521,
+      "latency": {
+        "playStart_to_firstInterim": 554,
+        "playEnd_to_lastFinal": 571,
+        "questionFinal_to_firstCandidate": 553,
+        "questionProvisional_to_firstCandidate": 541,
+        "provisionalBeforeEnd": 7478
+      },
+      "translations": [
+        {
+          "en": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game",
+          "ja": "〔モック訳〕how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）質問: how many users do you ha",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": true,
+      "issues": [
+        "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+      ],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 554,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 605,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 9
+        },
+        {
+          "t": 975,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1102,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1152,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1194,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1340,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1463,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 22
+        },
+        {
+          "t": 1582,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1696,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1938,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 2043,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 2121,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2172,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2638,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2733,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2953,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 46
+        },
+        {
+          "t": 3554,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 46
+        },
+        {
+          "t": 3663,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 4264,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 4448,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 59
+        },
+        {
+          "t": 4709,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 5039,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 5307,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 5481,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 69
+        },
+        {
+          "t": 5596,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 5726,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 78
+        },
+        {
+          "t": 6077,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 85
+        },
+        {
+          "t": 6196,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 85
+        },
+        {
+          "t": 6247,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 88
+        },
+        {
+          "t": 6331,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 88
+        },
+        {
+          "t": 6440,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 92
+        },
+        {
+          "t": 6665,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 92
+        },
+        {
+          "t": 6745,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 6848,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 7028,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 7219,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 99
+        },
+        {
+          "t": 7352,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 103
+        },
+        {
+          "t": 7406,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 107
+        },
+        {
+          "t": 7834,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 116
+        },
+        {
+          "t": 7945,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 116
+        },
+        {
+          "t": 8008,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 119
+        },
+        {
+          "t": 8415,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 123
+        },
+        {
+          "t": 8605,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 123
+        },
+        {
+          "t": 8655,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 125
+        },
+        {
+          "t": 8848,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 126
+        },
+        {
+          "t": 9025,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 133
+        },
+        {
+          "t": 9258,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 9440,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 9610,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 9848,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 10091,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q03_long",
+      "truth": "Let me give you some context first. We have been looking at a few blockchain games this quarter, and most of them struggle with onboarding. Players do not want to deal with wallets. So my question is this: how does your project handle onboarding for players who have never used a wallet before?",
+      "recognized": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project handle onboarding for players who have never used a wallet before",
+      "wer": 0,
+      "audioMs": 16789,
+      "latency": {
+        "playStart_to_firstInterim": 643,
+        "playEnd_to_lastFinal": 711,
+        "questionFinal_to_firstCandidate": 539,
+        "questionProvisional_to_firstCandidate": 550,
+        "provisionalBeforeEnd": 4074
+      },
+      "translations": [
+        {
+          "en": "let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project handle onboarding for players who have never used a wallet before",
+          "ja": "〔モック訳〕let me give you some context first we have been looking at a few blockchain games this quarter and most of them struggle with onboarding players do not want to deal with wallets so my question is this how does your project handle onboarding for players who have never used a wallet before",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）合意を求められています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "(fake API) I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "(fake API) Could you send me the details first?",
+          "ja": "先に詳細を送ってもらえますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 643,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 719,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 7
+        },
+        {
+          "t": 833,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1003,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 16
+        },
+        {
+          "t": 1233,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1313,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1415,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1621,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1671,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 1747,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1837,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 2264,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2339,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2764,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2862,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2944,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 43
+        },
+        {
+          "t": 3355,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 48
+        },
+        {
+          "t": 3453,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 3535,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 3776,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 59
+        },
+        {
+          "t": 3964,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4062,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4308,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 4380,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 4562,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 76
+        },
+        {
+          "t": 4848,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 82
+        },
+        {
+          "t": 5077,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 87
+        },
+        {
+          "t": 5165,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 82
+        },
+        {
+          "t": 5210,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 87
+        },
+        {
+          "t": 5455,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 93
+        },
+        {
+          "t": 5578,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 5806,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 95
+        },
+        {
+          "t": 5916,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 99
+        },
+        {
+          "t": 6176,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 99
+        },
+        {
+          "t": 6297,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 104
+        },
+        {
+          "t": 6428,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 107
+        },
+        {
+          "t": 6515,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 107
+        },
+        {
+          "t": 6604,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 112
+        },
+        {
+          "t": 6879,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 112
+        },
+        {
+          "t": 7027,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 118
+        },
+        {
+          "t": 7087,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 121
+        },
+        {
+          "t": 7195,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 126
+        },
+        {
+          "t": 7550,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 129
+        },
+        {
+          "t": 7622,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 134
+        },
+        {
+          "t": 7674,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 134
+        },
+        {
+          "t": 7714,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 7797,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 8327,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 137
+        },
+        {
+          "t": 8450,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 142
+        },
+        {
+          "t": 8642,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 145
+        },
+        {
+          "t": 8744,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 148
+        },
+        {
+          "t": 8865,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 152
+        },
+        {
+          "t": 9116,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 157
+        },
+        {
+          "t": 9245,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 157
+        },
+        {
+          "t": 9344,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 157
+        },
+        {
+          "t": 9473,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 160
+        },
+        {
+          "t": 9533,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 165
+        },
+        {
+          "t": 9651,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 170
+        },
+        {
+          "t": 9707,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 170
+        },
+        {
+          "t": 10068,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 170
+        },
+        {
+          "t": 10131,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 175
+        },
+        {
+          "t": 10199,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 178
+        },
+        {
+          "t": 10256,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 178
+        },
+        {
+          "t": 10801,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 178
+        },
+        {
+          "t": 11040,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 181
+        },
+        {
+          "t": 11220,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 184
+        },
+        {
+          "t": 11509,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 193
+        },
+        {
+          "t": 11638,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 193
+        },
+        {
+          "t": 11693,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 196
+        },
+        {
+          "t": 11826,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 196
+        },
+        {
+          "t": 11932,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 201
+        },
+        {
+          "t": 12102,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 201
+        },
+        {
+          "t": 12280,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 201
+        },
+        {
+          "t": 12544,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 205
+        },
+        {
+          "t": 12715,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 210
+        },
+        {
+          "t": 12947,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 215
+        },
+        {
+          "t": 13005,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 210
+        },
+        {
+          "t": 13076,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 215
+        },
+        {
+          "t": 13134,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 215
+        },
+        {
+          "t": 13262,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 223
+        },
+        {
+          "t": 13307,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 223
+        },
+        {
+          "t": 13678,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 228
+        },
+        {
+          "t": 13858,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 230
+        },
+        {
+          "t": 14039,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 233
+        },
+        {
+          "t": 14210,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 239
+        },
+        {
+          "t": 14390,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 241
+        },
+        {
+          "t": 14481,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 241
+        },
+        {
+          "t": 14641,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 245
+        },
+        {
+          "t": 14801,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 250
+        },
+        {
+          "t": 14929,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 253
+        },
+        {
+          "t": 14978,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 253
+        },
+        {
+          "t": 15126,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 257
+        },
+        {
+          "t": 15219,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 262
+        },
+        {
+          "t": 15398,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15529,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15721,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 268
+        },
+        {
+          "t": 15820,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 273
+        },
+        {
+          "t": 16010,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 273
+        },
+        {
+          "t": 16131,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 275
+        },
+        {
+          "t": 16321,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 280
+        },
+        {
+          "t": 16370,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 282
+        },
+        {
+          "t": 16432,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 282
+        },
+        {
+          "t": 16498,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 16720,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 16959,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 17090,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 289
+        },
+        {
+          "t": 17500,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q04_fast",
+      "truth": "Quick one. Which chain are you on, and why did you choose it over the alternatives?",
+      "recognized": "",
+      "wer": 1,
+      "audioMs": 3762,
+      "latency": {
+        "playStart_to_firstInterim": null,
+        "playEnd_to_lastFinal": null,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [],
+      "summaryJa": "（偽API）合意を求められています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "(fake API) I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "(fake API) Could you send me the details first?",
+          "ja": "先に詳細を送ってもらえますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": []
+    },
+    {
+      "id": "q05_names",
+      "truth": "Is Zentoria built on Solana, and is the budget around fifteen thousand dollars by March third?",
+      "recognized": "",
+      "wer": 1,
+      "audioMs": 5667,
+      "latency": {
+        "playStart_to_firstInterim": 726,
+        "playEnd_to_lastFinal": null,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [],
+      "summaryJa": "（偽API）合意を求められています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "(fake API) I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "(fake API) Could you send me the details first?",
+          "ja": "先に詳細を送ってもらえますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 726,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 3
+        },
+        {
+          "t": 992,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 1056,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1694,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 2471,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 2715,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 7
+        },
+        {
+          "t": 3132,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 3309,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 25
+        },
+        {
+          "t": 3922,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 25
+        },
+        {
+          "t": 4345,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 4577,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 4984,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 5172,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 5601,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 5666,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 43
+        },
+        {
+          "t": 5728,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 5768,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        }
+      ]
+    },
+    {
+      "id": "q06_contract",
+      "truth": "Can you commit to a fixed price of twenty thousand dollars and sign the contract this week?",
+      "recognized": "can you commit to a fixed price of $20,000 and sign the contract this week",
+      "wer": 0.176,
+      "audioMs": 4854,
+      "latency": {
+        "playStart_to_firstInterim": 633,
+        "playEnd_to_lastFinal": 625,
+        "questionFinal_to_firstCandidate": 536,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "can you commit to a fixed price of $20,000 and sign the contract this week",
+          "ja": "〔モック訳〕can you commit to a fixed price of $20,000 and sign the contract this week",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）合意を求められています",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "保留する",
+          "en": "(fake API) I can't decide that today. Let me check and get back to you.",
+          "ja": "今日は決められません。確認して折り返します。",
+          "confirm": true,
+          "basis": "none"
+        },
+        {
+          "strategy": "条件を尋ねる",
+          "en": "(fake API) Could you send me the details first?",
+          "ja": "先に詳細を送ってもらえますか？",
+          "confirm": true,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 633,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 682,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 8
+        },
+        {
+          "t": 863,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 925,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1046,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1235,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1279,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 20
+        },
+        {
+          "t": 1423,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 24
+        },
+        {
+          "t": 1524,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 1664,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 1713,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 1883,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2121,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2308,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2493,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2623,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 39
+        },
+        {
+          "t": 2728,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 3101,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 43
+        },
+        {
+          "t": 3468,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 47
+        },
+        {
+          "t": 3627,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 3681,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 3817,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 4049,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 61
+        },
+        {
+          "t": 4149,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4229,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4339,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4388,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 70
+        },
+        {
+          "t": 4700,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 4748,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 4931,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 5451,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 5479,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q07_outside",
+      "truth": "What is your opinion on the latest Unreal Engine pricing changes announced last month?",
+      "recognized": "what is your opinion on the latest Unreal Engine pricing changes announced last month",
+      "wer": 0,
+      "audioMs": 5086,
+      "latency": {
+        "playStart_to_firstInterim": 626,
+        "playEnd_to_lastFinal": 449,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": 3262
+      },
+      "translations": [
+        {
+          "en": "what is your opinion on the latest Unreal Engine pricing changes announced last month",
+          "ja": "〔モック訳〕what is your opinion on the latest Unreal Engine pricing changes announced last month",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "",
+      "questionState": "final",
+      "candidates": [],
+      "setStatus": "error",
+      "setError": "Anthropic が混雑しています（529）。次の質問で自動的に再試行します。",
+      "corrected": false,
+      "issues": [
+        "reply-upstream-error: Anthropic が混雑しています（529）。次の質問で自動的に再試行します。",
+        "reply-upstream-error: Anthropic が混雑しています（529）。次の質問で自動的に再試行します。",
+        "reply-upstream-error: Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+      ],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 626,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 5
+        },
+        {
+          "t": 765,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 8
+        },
+        {
+          "t": 884,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 13
+        },
+        {
+          "t": 1124,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1192,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1249,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1369,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1474,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 24
+        },
+        {
+          "t": 1523,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 1774,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 28
+        },
+        {
+          "t": 1824,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2066,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2116,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 35
+        },
+        {
+          "t": 2243,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2434,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2544,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 42
+        },
+        {
+          "t": 2682,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 3148,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 3285,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3650,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 63
+        },
+        {
+          "t": 3709,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 3880,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 65
+        },
+        {
+          "t": 4202,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 69
+        },
+        {
+          "t": 4283,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 4329,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 73
+        },
+        {
+          "t": 4345,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 4597,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 4755,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 4937,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 5189,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 5347,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 86
+        },
+        {
+          "t": 5534,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q08_negation",
+      "truth": "Do you plan to raise money this year? No wait, not this year. I mean next year. Are you planning to raise a seed round next year?",
+      "recognized": "",
+      "wer": 1,
+      "audioMs": 8035,
+      "latency": {
+        "playStart_to_firstInterim": 645,
+        "playEnd_to_lastFinal": null,
+        "questionFinal_to_firstCandidate": null,
+        "questionProvisional_to_firstCandidate": 556,
+        "provisionalBeforeEnd": 6237
+      },
+      "translations": [],
+      "summaryJa": "（偽API）質問: do you plan to raise mon",
+      "questionState": "provisional",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": true,
+      "issues": [
+        "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+      ],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 645,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 3
+        },
+        {
+          "t": 782,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 7
+        },
+        {
+          "t": 969,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1067,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1261,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 1326,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1381,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 21
+        },
+        {
+          "t": 1508,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1567,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1662,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 27
+        },
+        {
+          "t": 1799,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 1927,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 32
+        },
+        {
+          "t": 1977,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2100,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2400,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2579,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2771,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2872,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 4487,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 39
+        },
+        {
+          "t": 4679,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 44
+        },
+        {
+          "t": 4909,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 5090,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 5699,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 54
+        },
+        {
+          "t": 5827,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 58
+        },
+        {
+          "t": 5955,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 62
+        },
+        {
+          "t": 6206,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 71
+        },
+        {
+          "t": 6293,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 74
+        },
+        {
+          "t": 6417,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 74
+        },
+        {
+          "t": 6529,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 74
+        },
+        {
+          "t": 6721,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 6804,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 6905,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 80
+        },
+        {
+          "t": 6967,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 82
+        }
+      ]
+    },
+    {
+      "id": "q09_short",
+      "truth": "Why?",
+      "recognized": "why",
+      "wer": 0,
+      "audioMs": 698,
+      "latency": {
+        "playStart_to_firstInterim": 934,
+        "playEnd_to_lastFinal": 689,
+        "questionFinal_to_firstCandidate": 543,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "why",
+          "ja": "〔モック訳〕why",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）質問: why",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 934,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 1387,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q10_statement",
+      "truth": "That sounds great. Thanks for walking us through the demo.",
+      "recognized": "that sounds great thanks for walking us through the demo",
+      "wer": 0,
+      "audioMs": 3228,
+      "latency": {
+        "playStart_to_firstInterim": 668,
+        "playEnd_to_lastFinal": 586,
+        "questionFinal_to_firstCandidate": 537,
+        "questionProvisional_to_firstCandidate": null,
+        "provisionalBeforeEnd": null
+      },
+      "translations": [
+        {
+          "en": "that sounds great thanks for walking us through the demo",
+          "ja": "〔モック訳〕that sounds great thanks for walking us through the demo",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）質問: that sounds great thanks",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 668,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 5
+        },
+        {
+          "t": 832,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 12
+        },
+        {
+          "t": 1010,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1247,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1436,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1612,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1753,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 25
+        },
+        {
+          "t": 1932,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 2299,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2357,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 2454,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2532,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 40
+        },
+        {
+          "t": 2633,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 48
+        },
+        {
+          "t": 2771,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 2874,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 52
+        },
+        {
+          "t": 3065,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 3194,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3232,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3372,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3814,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q11_overlap",
+      "truth": "Could you tell us more about the team behind the project? And also, what is the timeline for the mainnet launch?",
+      "recognized": "could you tell us more about the team behind the project",
+      "wer": 0.476,
+      "audioMs": 4738,
+      "latency": {
+        "playStart_to_firstInterim": 452,
+        "playEnd_to_lastFinal": 555,
+        "questionFinal_to_firstCandidate": 547,
+        "questionProvisional_to_firstCandidate": 529,
+        "provisionalBeforeEnd": 2912
+      },
+      "translations": [
+        {
+          "en": "could you tell us more about the team behind the project",
+          "ja": "〔モック訳〕could you tell us more about the team behind the project",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）質問: could you tell us more a",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 452,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 493,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 10
+        },
+        {
+          "t": 679,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 15
+        },
+        {
+          "t": 995,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1043,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1096,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 18
+        },
+        {
+          "t": 1225,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 1287,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 23
+        },
+        {
+          "t": 1356,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1596,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 29
+        },
+        {
+          "t": 1826,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 1936,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 2028,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 38
+        },
+        {
+          "t": 2138,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 2222,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 2437,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 2487,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 2624,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 2715,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 2796,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3092,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 3316,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 57
+        },
+        {
+          "t": 5293,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    },
+    {
+      "id": "q12_gaps",
+      "truth": "Why? Quick one. Which chain are you on, and why did you choose it over the alternatives?",
+      "recognized": "why quick",
+      "wer": 0.882,
+      "audioMs": 12423,
+      "latency": {
+        "playStart_to_firstInterim": 4716,
+        "playEnd_to_lastFinal": 624,
+        "questionFinal_to_firstCandidate": 526,
+        "questionProvisional_to_firstCandidate": 545,
+        "provisionalBeforeEnd": 2039
+      },
+      "translations": [
+        {
+          "en": "why",
+          "ja": "〔モック訳〕why",
+          "state": "final"
+        },
+        {
+          "en": "quick",
+          "ja": "〔モック訳〕quick",
+          "state": "final"
+        }
+      ],
+      "summaryJa": "（偽API）質問: quick",
+      "questionState": "final",
+      "candidates": [
+        {
+          "strategy": "要点を答える",
+          "en": "(fake API) Good question. Here is the short answer.",
+          "ja": "良い質問です。短く答えます。",
+          "confirm": false,
+          "basis": "general"
+        },
+        {
+          "strategy": "聞き返す",
+          "en": "(fake API) Do you mean the current version?",
+          "ja": "今のバージョンのことですか？",
+          "confirm": false,
+          "basis": "none"
+        }
+      ],
+      "setStatus": "done",
+      "setError": null,
+      "corrected": false,
+      "issues": [],
+      "dropped": {
+        "count": 0,
+        "ms": 0
+      },
+      "stt": [
+        {
+          "t": 4716,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 4
+        },
+        {
+          "t": 5384,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        },
+        {
+          "t": 9189,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 9362,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 10
+        },
+        {
+          "t": 9860,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 16
+        },
+        {
+          "t": 10043,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 22
+        },
+        {
+          "t": 10160,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 26
+        },
+        {
+          "t": 10228,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 30
+        },
+        {
+          "t": 10384,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 10459,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 10641,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 33
+        },
+        {
+          "t": 10693,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 10759,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 10805,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 37
+        },
+        {
+          "t": 10979,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 41
+        },
+        {
+          "t": 11119,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 11172,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 45
+        },
+        {
+          "t": 11249,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 11296,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 49
+        },
+        {
+          "t": 11418,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 11500,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 56
+        },
+        {
+          "t": 11584,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 59
+        },
+        {
+          "t": 11713,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 64
+        },
+        {
+          "t": 11844,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 11958,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 68
+        },
+        {
+          "t": 12080,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 12133,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 75
+        },
+        {
+          "t": 12379,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 6
+        },
+        {
+          "t": 12450,
+          "ev": "result",
+          "finals": 0,
+          "interimLen": 81
+        },
+        {
+          "t": 13047,
+          "ev": "result",
+          "finals": 1,
+          "interimLen": 0
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "direct/options-check",
+      "name": "設定画面の「接続を確認」が無料のモデル API で成功し、キー本体は画面に出ない",
+      "pass": true,
+      "detail": {
+        "apiState": "接続OK Claude opus 5 5 を使えます（…0000）",
+        "keyFieldEmpty": true,
+        "pageHasKey": false
+      }
+    },
+    {
+      "id": "q01_status/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "pin/spoken",
+      "name": "固定と「これを話した」が反映される",
+      "pass": true,
+      "detail": {
+        "pinned": [
+          "(fake API) Good question. Here is the short answer."
+        ],
+        "meSaid": [
+          "(fake API) Good question. Here is the short answer."
+        ]
+      }
+    },
+    {
+      "id": "q02_restate/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q02_restate/corr",
+      "name": "言い直し・否定を検知して候補を作り直す",
+      "pass": true,
+      "detail": {
+        "issues": [
+          "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+        ],
+        "questionText": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game"
+      }
+    },
+    {
+      "id": "pin/persist",
+      "name": "新しい質問が来ても固定中の候補は消えない・変わらない",
+      "pass": true,
+      "detail": {
+        "pinned": [
+          "(fake API) Good question. Here is the short answer."
+        ],
+        "currentQuestion": "how many users do you have right now actually sorry forget that what I really wanted to ask is how are you planning to use AI inside the game"
+      }
+    },
+    {
+      "id": "refine",
+      "name": "「こう言いたい」で英語の言い直しが出る",
+      "pass": true,
+      "detail": {
+        "items": [
+          "(fake API) I would like to decide after we see next month's test build."
+        ],
+        "ms": 527
+      }
+    },
+    {
+      "id": "q03_long/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q04_fast/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q05_names/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q05_names/names",
+      "name": "固有名詞・金額・日付の聞き取り (誤認識は表示で確認できる)",
+      "pass": true,
+      "detail": {
+        "recognized": "",
+        "keywordsFound": [
+          {
+            "k": "zentoria",
+            "found": false
+          },
+          {
+            "k": "solana",
+            "found": false
+          },
+          {
+            "k": "15,000|fifteen thousand|15000",
+            "found": false
+          },
+          {
+            "k": "march",
+            "found": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "q06_contract/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q06_contract/confirm",
+      "name": "費用・契約の質問では承諾せず確認・保留の候補だけ",
+      "pass": true,
+      "detail": {
+        "items": [
+          {
+            "strategy": "保留する",
+            "en": "(fake API) I can't decide that today. Let me check and get back to you.",
+            "ja": "今日は決められません。確認して折り返します。",
+            "confirm": true,
+            "basis": "none"
+          },
+          {
+            "strategy": "条件を尋ねる",
+            "en": "(fake API) Could you send me the details first?",
+            "ja": "先に詳細を送ってもらえますか？",
+            "confirm": true,
+            "basis": "none"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q07_outside/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 0,
+        "error": "Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+      }
+    },
+    {
+      "id": "q07_outside/relay-down",
+      "name": "API 障害（529 過負荷）時はエラーが表示され黙って進まない",
+      "pass": true,
+      "detail": {
+        "issues": [
+          "reply-upstream-error: Anthropic が混雑しています（529）。次の質問で自動的に再試行します。",
+          "reply-upstream-error: Anthropic が混雑しています（529）。次の質問で自動的に再試行します。",
+          "reply-upstream-error: Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+        ],
+        "setError": "Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+      }
+    },
+    {
+      "id": "q08_negation/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "provisional",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q08_negation/corr",
+      "name": "言い直し・否定を検知して候補を作り直す",
+      "pass": true,
+      "detail": {
+        "issues": [
+          "corrected: 言い直し・訂正を検知しました。候補を作り直します。"
+        ],
+        "questionText": "do you plan to raise money this year I mean next year are you"
+      }
+    },
+    {
+      "id": "q09_short/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q10_statement/stmt",
+      "name": "説明文は質問扱いにならない",
+      "pass": true,
+      "detail": {
+        "kind": "statement",
+        "summary": "（偽API）質問: that sounds great thanks"
+      }
+    },
+    {
+      "id": "q11_overlap/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "q12_gaps/q",
+      "name": "質問として検知し候補を生成",
+      "pass": true,
+      "detail": {
+        "state": "final",
+        "items": 2,
+        "error": null
+      }
+    },
+    {
+      "id": "direct/requests",
+      "name": "拡張から直接ストリーミング接続（公式 SDK・ブラウザ用ヘッダー・プロンプトキャッシュ・拒否時フォールバック）",
+      "pass": true,
+      "detail": {
+        "requests": 30,
+        "sample": {
+          "path": "/v1/messages",
+          "beta": true,
+          "model": "claude-opus-5-5",
+          "stream": true,
+          "directHeader": "true",
+          "betaHeader": "server-side-fallback-2026-07-01",
+          "version": "2023-06-01",
+          "keyOk": true,
+          "fallbacks": "default",
+          "effort": "low",
+          "cache": true,
+          "translate": false
+        }
+      }
+    },
+    {
+      "id": "direct/key-hidden",
+      "name": "API キーは取得処理の状態にもパネル表示にも出ない",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "direct/spend",
+      "name": "費用を推定し、上限つきでパネルに表示",
+      "pass": true,
+      "detail": {
+        "spentUsd": 0.22502,
+        "requests": 24,
+        "maxSessionUsd": 1,
+        "maxReqPerMin": 30,
+        "panelUsage": "生成 24 回 / この会議の推定費用 $0.2250（上限 $1.00）"
+      }
+    }
+  ],
+  "features": {
+    "translatorAvailability": {
+      "before": "downloadable",
+      "after": "downloadable"
+    },
+    "onDeviceSpeech": "downloading",
+    "sttMode": "google-server",
+    "translateProvider": "mock"
+  },
+  "browser": "Chrome/155.0.8059.84",
+  "destinations": [
+    {
+      "stage": "音声認識",
+      "label": "Google 音声認識サーバー (Chrome Web Speech API)",
+      "external": true,
+      "who": "Google"
+    },
+    {
+      "stage": "日本語訳",
+      "label": "モック (送信なし)",
+      "external": false
+    },
+    {
+      "stage": "返答候補",
+      "label": "Anthropic に直接 (claude-opus-5-5)",
+      "external": true,
+      "who": "Anthropic"
+    }
+  ],
+  "fakeApi": {
+    "requests": 30,
+    "models": [
+      "claude-opus-5-5"
+    ],
+    "simulatedFailures": 0
+  },
+  "metrics": {
+    "capture_to_first_interim": {
+      "label": "音声取得→認識 (発話開始→最初の途中結果)",
+      "n": 12,
+      "p50": 489,
+      "p95": 761,
+      "min": 288,
+      "max": 761
+    },
+    "partial_to_translation": {
+      "label": "認識→翻訳 (途中訳)",
+      "n": 29,
+      "p50": 471,
+      "p95": 473,
+      "min": 471,
+      "max": 473
+    },
+    "question_provisional_to_first_candidate": {
+      "label": "質問(暫定)→最初の候補",
+      "n": 14,
+      "p50": 545,
+      "p95": 564,
+      "min": 529,
+      "max": 564
+    },
+    "reply_total": {
+      "label": "候補生成の完了まで",
+      "n": 23,
+      "p50": 653,
+      "p95": 673,
+      "min": 624,
+      "max": 679
+    },
+    "speech_end_to_final": {
+      "label": "音声取得→認識 (発話終了→確定)",
+      "n": 10,
+      "p50": 779,
+      "p95": 864,
+      "min": 713,
+      "max": 864
+    },
+    "final_to_translation": {
+      "label": "認識→翻訳 (確定訳)",
+      "n": 9,
+      "p50": 121,
+      "p95": 129,
+      "min": 0,
+      "max": 129
+    },
+    "question_final_to_first_candidate": {
+      "label": "質問の確定→最初の候補",
+      "n": 9,
+      "p50": 539,
+      "p95": 553,
+      "min": 526,
+      "max": 553
+    },
+    "refine_to_result": {
+      "label": "言い直し→結果",
+      "n": 1,
+      "p50": 527,
+      "p95": 527,
+      "min": 527,
+      "max": 527
+    }
+  },
+  "usage": {
+    "requests": 24,
+    "inputTokens": 43200,
+    "outputTokens": 2611,
+    "costUsd": 0.22502000000000008,
+    "relaySpentUsd": 0.22502
+  },
+  "audio": {
+    "level": 0,
+    "speaking": false,
+    "trackState": "live",
+    "ctxState": "running",
+    "dropped": {
+      "count": 0,
+      "ms": 0
+    }
+  },
+  "issues": [
+    {
+      "ts": 1792792095595.5,
+      "level": "info",
+      "code": "corrected",
+      "message": "言い直し・訂正を検知しました。候補を作り直します。"
+    },
+    {
+      "ts": 1792792155769.9,
+      "level": "error",
+      "code": "reply-upstream-error",
+      "message": "Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+    },
+    {
+      "ts": 1792792158553.5,
+      "level": "error",
+      "code": "reply-upstream-error",
+      "message": "Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+    },
+    {
+      "ts": 1792792159398.2,
+      "level": "error",
+      "code": "reply-upstream-error",
+      "message": "Anthropic が混雑しています（529）。次の質問で自動的に再試行します。"
+    },
+    {
+      "ts": 1792792166950.5,
+      "level": "info",
+      "code": "corrected",
+      "message": "言い直し・訂正を検知しました。候補を作り直します。"
+    }
+  ],
+  "summary": {
+    "playStart_to_firstInterim": {
+      "n": 11,
+      "p50": 645,
+      "p95": 4716
+    },
+    "playEnd_to_lastFinal": {
+      "n": 9,
+      "p50": 622,
+      "p95": 711
+    },
+    "questionFinal_to_firstCandidate": {
+      "n": 8,
+      "p50": 537,
+      "p95": 553
+    },
+    "questionProvisional_to_firstCandidate": {
+      "n": 6,
+      "p50": 543,
+      "p95": 556
+    },
+    "werMean": 0.378
+  },
+  "finishedAt": "2026-10-23T21:50:10.957Z"
+}

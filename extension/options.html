@@ -48,21 +48,34 @@ textarea.json { width:100%; min-height:120px; font: 12px/1.4 ui-monospace, Menlo
   <details style="margin-top:8px"><summary>JSON で入出力</summary><textarea id="profileJson" class="json"></textarea><div class="row"><button id="btnExport" class="ghost">書き出す</button><button id="btnImport" class="ghost">読み込んで保存</button></div></details>
 </section>
 
+<section class="card" id="secApi">
+  <h2>Anthropic API（拡張から直接接続・おすすめ）</h2>
+  <p class="muted">返答候補を本物の Claude で出すための設定です。中継やターミナルは要りません。キーはこの Chrome プロファイルの拡張の保存領域にだけ保存され、同期も送信もしません（Anthropic への接続にだけ使います）。ただし保存は暗号化されておらず、拡張の開発者ツールを開ける人には見えます。<b>このツール専用のキーを作り、Anthropic Console で使用上限を低めに設定</b>してください。</p>
+  <div class="grid">
+    <label class="f">API キー <input id="api_key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-ant-…（ここに貼り付けて「キーを保存」）"></label>
+    <label class="f">モデル <select id="s_replyModel"></select></label>
+    <label class="f">この会議の費用上限（USD・推定） <input id="s_maxSessionUsd" type="number" min="0.05" max="50" step="0.05"></label>
+    <label class="f">1 分あたりの回数上限 <input id="s_maxReqPerMin" type="number" min="1" max="120"></label>
+  </div>
+  <div class="row" style="margin-top:6px"><button id="btnApiSave" class="primary">キーを保存</button><button id="btnApiCheck" class="ghost">接続を確認（無料）</button><button id="btnApiDelete" class="ghost">キーを削除</button><span id="apiState" class="kv"></span></div>
+  <p class="muted" id="apiCost"></p>
+</section>
+
 <section class="card">
   <h2>提供元（差し替え可能）</h2>
   <div class="grid">
     <label class="f">音声認識 <select id="s_stt"><option value="webspeech">Chrome Web Speech API</option><option value="mock">モック（テスト用）</option></select></label>
     <label class="f">認識言語 <input id="s_sttLang" value="en-US"></label>
-    <label class="f">日本語訳 <select id="s_translate"><option value="chrome">Chrome Translator API（端末内）</option><option value="relay">ローカル中継 → Anthropic</option><option value="mock">モック</option></select></label>
-    <label class="f">返答候補 <select id="s_reply"><option value="relay">ローカル中継 → Anthropic</option><option value="chrome-prompt">Chrome Prompt API（Gemini Nano・未検証）</option><option value="mock">モック</option></select></label>
+    <label class="f">日本語訳 <select id="s_translate"><option value="chrome">Chrome Translator API（端末内・無料）</option><option value="direct">Anthropic に直接（API キー・有料）</option><option value="relay">ローカル中継 → Anthropic</option><option value="mock">モック</option></select></label>
+    <label class="f">返答候補 <select id="s_reply"><option value="direct">Anthropic に直接（API キー・おすすめ）</option><option value="relay">ローカル中継 → Anthropic（上級者向け）</option><option value="chrome-prompt">Chrome Prompt API（Gemini Nano・未検証）</option><option value="mock">モック（定型文・テスト用）</option></select></label>
   </div>
   <label class="check" style="margin-top:8px"><input type="checkbox" id="s_sttLocal"> 音声認識を端末内で行う（Chrome のオンデバイス認識。言語パックの準備が必要） <span id="sttLocalState" class="kv"></span></label>
   <div class="row"><button id="btnSttLocalPrep" class="ghost">オンデバイス認識の言語パックを準備</button><button id="btnTranslatorPrep" class="ghost">翻訳モデルを準備</button><span id="translatorState" class="kv"></span><button id="btnPromptCheck" class="ghost">Prompt API の利用可否を確認</button><span id="promptState" class="kv"></span></div>
-  <p class="muted">既定の Web Speech API は音声を Google の音声認識サーバーへ送ります。端末内モードは送信しません。翻訳の既定（Translator API）は端末内で処理します。候補生成は 127.0.0.1 のローカル中継を経由して Anthropic に送ります（文字起こしの一部と登録情報。音声は送りません）。</p>
+  <p class="muted">既定の Web Speech API は音声を Google の音声認識サーバーへ送ります。端末内モードは送信しません。翻訳の既定（Translator API）は端末内で処理します。返答候補は Anthropic に送ります（文字起こしの一部・登録情報・「こう言いたい」の日本語。音声は送りません）。</p>
 </section>
 
 <section class="card">
-  <h2>ローカル中継（API キーは中継側だけが持ちます）</h2>
+  <h2>ローカル中継（上級者向け：キーをブラウザの外に置きたい場合）</h2>
   <div class="grid">
     <label class="f">中継 URL <input id="s_relayUrl" value="http://127.0.0.1:47231"></label>
     <label class="f">ペアリングトークン（中継起動時に表示される値） <input id="s_relayToken" type="password" autocomplete="off" placeholder="relay が表示したトークンを貼り付け"></label>

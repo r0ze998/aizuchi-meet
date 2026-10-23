@@ -167,10 +167,20 @@ export class Pipeline {
     const code = e?.code;
     if (code === 'unreachable') return `ローカル中継に接続できません (${this.settings.relayUrl})。relay を起動してください。`;
     if (code === 'unpaired') return '中継とのペアリングが無効です。設定画面でトークンを入れ直してください。';
-    if (code === 'budget-exceeded') return '中継のセッション費用上限に達しました。候補生成を止めています。';
-    if (code === 'rate-limited') return '中継のレート上限に達しました。少し待ってから再試行してください。';
+    if (code === 'no-key') return 'API キーが未設定です。設定画面の「Anthropic API」でキーを入れてください。';
+    if (code === 'auth') return 'API キーが無効です（401）。設定画面で入れ直してください。';
+    if (code === 'permission') return 'このキーではこのモデルを使えません（403）。';
+    if (code === 'model-not-found') return 'モデルが見つかりません（404）。設定画面でモデルを選び直してください。';
+    if (code === 'unreachable-api') return 'Anthropic に接続できません。ネットワークを確認してください。';
+    if (code === 'bad-request') return `リクエストが受け付けられませんでした: ${e.message}`;
+    if (code === 'budget-exceeded') return `この会議の費用上限に達しました。候補生成を止めています（${e.message || ''}。上限は設定画面で変えられます）。`;
+    if (code === 'rate-limited') return '回数の上限に達しました。少し待つと再開します。';
     if (code === 'refusal') return `モデルが応答を拒否しました: ${e.message}`;
-    if (code === 'upstream-error') return `モデル側のエラー: ${e.message}`;
+    if (code === 'upstream-error') {
+      const status = Number(e?.status) || Number(String(e?.message || '').match(/^(\d{3})\b/)?.[1]) || 0;
+      if (status === 529) return 'Anthropic が混雑しています（529）。次の質問で自動的に再試行します。';
+      return `Anthropic 側のエラーです${status ? `（${status}）` : ''}。少し待ってから再試行してください。`;
+    }
     return `候補生成に失敗: ${e?.message || e}`;
   }
   accountUsage(d) {
